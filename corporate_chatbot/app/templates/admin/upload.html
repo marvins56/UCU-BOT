@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="min-h-screen bg-gray-50 py-8 px-4">
+    <div class="max-w-3xl mx-auto">
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-2xl font-bold text-gray-900">Document Upload</h1>
+            <p class="mt-1 text-sm text-gray-500">Upload PDF, TXT, or DOCX files</p>
+        </div>
+
+        <!-- Upload Zone -->
+        <div class="bg-white rounded-lg shadow">
+            <!-- Drag & Drop Zone -->
+            <div class="p-8" id="upload-zone">
+                <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center" 
+                     id="dropzone">
+                    <div class="space-y-4">
+                        <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                            <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <div class="text-sm text-gray-600">
+                            <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500">
+                                <span>Upload a file</span>
+                                <input id="file-upload" type="file" class="sr-only" multiple accept=".pdf,.txt,.docx">
+                            </label>
+                            <p class="pl-1">or drag and drop</p>
+                        </div>
+                        <p class="text-xs text-gray-500">PDF, TXT, DOCX up to 10MB</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- File List -->
+            <div class="border-t border-gray-200 p-4">
+                <h3 class="text-sm font-semibold text-gray-900">Uploaded Files</h3>
+                <ul class="mt-4 space-y-4" id="file-list">
+                    <!-- Files will be listed here -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Preview Panel -->
+        <div class="mt-8 bg-white rounded-lg shadow p-6" id="preview-panel" style="display: none;">
+            <h3 class="text-lg font-medium text-gray-900 mb-4">Document Preview</h3>
+            <div class="prose max-w-none" id="preview-content">
+                <!-- Preview content will be shown here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Progress Modal -->
+<div class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center" 
+     id="progress-modal" style="display: none;">
+    <div class="bg-white rounded-lg p-6 max-w-sm w-full mx-4">
+        <h3 class="text-lg font-medium text-gray-900 mb-4">Processing Document</h3>
+        <div class="w-full bg-gray-200 rounded-full h-2.5">
+            <div class="bg-blue-600 h-2.5 rounded-full" id="progress-bar" style="width: 0%"></div>
+        </div>
+        <p class="mt-2 text-sm text-gray-500" id="progress-text">Starting...</p>
+    </div>
+</div>
+
+<script>
+// JavaScript for handling uploads and previews
+document.addEventListener('DOMContentLoaded', function() {
+    const dropzone = document.getElementById('dropzone');
+    const fileList = document.getElementById('file-list');
+    const progressModal = document.getElementById('progress-modal');
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+    
+    // Handle drag and drop
+    dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropzone.classList.add('border-blue-500');
+    });
+    
+    dropzone.addEventListener('dragleave', () => {
+        dropzone.classList.remove('border-blue-500');
+    });
+    
+    dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('border-blue-500');
+        handleFiles(e.dataTransfer.files);
+    });
+    
+    // Handle file input
+    document.getElementById('file-upload').addEventListener('change', (e) => {
+        handleFiles(e.target.files);
+    });
+    
+    function handleFiles(files) {
+        Array.from(files).forEach(file => {
+            if (validateFile(file)) {
+                uploadFile(file);
+            }
+        });
+    }
+    
+    function validateFile(file) {
+        const validTypes = ['.pdf', '.txt', '.docx'];
+        const fileExt = file.name.substring(file.name.lastIndexOf('.')).toLowerCase();
+        
+        if (!validTypes.includes(fileExt)) {
+            alert('Invalid file type. Please upload PDF, TXT, or DOCX files.');
+            return false;
+        }
+        
+        if (file.size > 10 * 1024 * 1024) {
+            alert('File too large. Maximum size is 10MB.');
+            return false;
+        }
+        
+        return true;
+    }
+    
+    function uploadFile(file) {
+        // Show progress modal
+        progressModal.style.display = 'flex';
+        
+        const formData = new FormData();
+        formData.append('file', file);
+        
+        fetch('/admin/upload', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            addFileToList(file.name, data.status);
+            updateProgress(100, 'Complete');
+            setTimeout(() => {
+                progressModal.style.display = 'none';
+                progressBar.style.width = '0%';
+            }, 1000);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            updateProgress(100, 'Error uploading file');
+        });
+    }
+    
+    function addFileToList(fileName, status) {
+        const li = document.createElement('li');
+        li.className = 'flex items-center justify-between py-2';
+        li.innerHTML = `
+            <div class="flex items-center">
+                <svg class="h-5 w-5 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                <span class="text-sm text-gray-900">${fileName}</span>
+            </div>
+            <span class="text-sm text-green-500">Processed</span>
+        `;
+        fileList.appendChild(li);
+    }
+    
+    function updateProgress(percent, text) {
+        progressBar.style.width = `${percent}%`;
+        progressText.textContent = text;
+    }
+});
+</script>
+{% endblock %}

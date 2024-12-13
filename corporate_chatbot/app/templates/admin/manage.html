@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="bg-white shadow rounded-lg divide-y divide-gray-200">
+    <!-- Header -->
+    <div class="px-4 py-5 sm:px-6">
+        <h2 class="text-2xl font-bold text-gray-900">Knowledge Base Management</h2>
+    </div>
+
+    <!-- Collection Management -->
+    <div class="px-4 py-5 sm:p-6">
+        <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-medium text-gray-900">Collections</h3>
+            <button type="button" id="new-collection-btn" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700">
+                New Collection
+            </button>
+        </div>
+
+        <!-- Collections Table -->
+        <div class="mt-4">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Documents</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Updated</th>
+                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200" id="collections-table">
+                        <!-- Collections will be listed here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="px-4 py-5 sm:p-6">
+        <h3 class="text-lg font-medium text-gray-900 mb-4">Search Collections</h3>
+        <div class="max-w-xl">
+            <div class="mt-1 flex rounded-md shadow-sm">
+                <input type="text" id="search-input" class="focus:ring-blue-500 focus:border-blue-500 flex-1 block w-full rounded-md sm:text-sm border-gray-300" placeholder="Search in collections...">
+                <button type="button" id="search-btn" class="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                    Search
+                </button>
+            </div>
+        </div>
+        <div class="mt-6" id="search-results">
+            <!-- Search results will appear here -->
+        </div>
+    </div>
+</div>
+
+<!-- New Collection Modal -->
+<div id="new-collection-modal" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden">
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4">
+            <div class="px-4 py-5 sm:p-6">
+                <h3 class="text-lg font-medium text-gray-900">Create New Collection</h3>
+                <form id="new-collection-form" class="mt-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Collection Name</label>
+                        <input type="text" id="collection-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                    </div>
+                    <div class="mt-4 flex justify-end">
+                        <button type="button" id="modal-cancel" class="mr-3 px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-500">
+                            Cancel
+                        </button>
+                        <button type="submit" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700">
+                            Create
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    loadCollections();
+    setupEventListeners();
+});
+
+async function loadCollections() {
+    try {
+        const response = await fetch('/admin/collections');
+        const collections = await response.json();
+        
+        const tableBody = document.getElementById('collections-table');
+        tableBody.innerHTML = collections.map(collection => `
+            <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${collection.name}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${collection.document_count}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${new Date(collection.last_updated).toLocaleDateString()}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <button class="text-blue-600 hover:text-blue-900 mr-4" onclick="viewCollection('${collection.name}')">View</button>
+                    <button class="text-red-600 hover:text-red-900" onclick="deleteCollection('${collection.name}')">Delete</button>
+                </td>
+            </tr>
+        `).join('');
+    } catch (error) {
+        console.error('Error loading collections:', error);
+    }
+}
+
+function setupEventListeners() {
+    const modal = document.getElementById('new-collection-modal');
+    const newCollectionBtn = document.getElementById('new-collection-btn');
+    const modalCancel = document.getElementById('modal-cancel');
+    const newCollectionForm = document.getElementById('new-collection-form');
+    const searchBtn = document.getElementById('search-btn');
+
+    newCollectionBtn.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+    });
+
+    modalCancel.addEventListener('click', () => {
+        modal.classList.add('hidden');
+    });
+
+    newCollectionForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('collection-name').value;
+        try {
+            await fetch('/admin/collections', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name })
+            });
+            modal.classList.add('hidden');
+            loadCollections();
+        } catch (error) {
+            console.error('Error creating collection:', error);
+        }
+    });
+
+    searchBtn.addEventListener('click', async () => {
+        const query = document.getElementById('search-input').value;
+        try {
+            const response = await fetch('/admin/search', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ query })
+            });
+            const results = await response.json();
+            displaySearchResults(results);
+        } catch (error) {
+            console.error('Error searching:', error);
+        }
+    });
+}
+
+function displaySearchResults(results) {
+    const resultsDiv = document.getElementById('search-results');
+    resultsDiv.innerHTML = results.map(result => `
+        <div class="mb-4 p-4 bg-gray-50 rounded-lg">
+            <div class="text-sm text-gray-900">${result.text}</div>
+            <div class="mt-2 text-xs text-gray-500">Source: ${result.metadata.source}</div>
+        </div>
+    `).join('');
+}
+
+async function deleteCollection(name) {
+    if (confirm(`Are you sure you want to delete collection "${name}"?`)) {
+        try {
+            await fetch(`/admin/collections/${name}`, {
+                method: 'DELETE'
+            });
+            loadCollections();
+        } catch (error) {
+            console.error('Error deleting collection:', error);
+        }
+    }
+}
+
+function viewCollection(name) {
+    // Implement collection viewing logic
+    console.log(`Viewing collection: ${name}`);
+}
+</script>
+{% endblock %}

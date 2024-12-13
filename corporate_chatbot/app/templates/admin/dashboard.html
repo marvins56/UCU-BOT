@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="bg-white shadow rounded-lg">
+    <div class="px-4 py-5 sm:p-6">
+        <h2 class="text-2xl font-bold mb-4">Dashboard Overview</h2>
+        
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <dt class="text-sm font-medium text-gray-500 truncate">Total Documents</dt>
+                    <dd class="mt-1 text-3xl font-semibold text-gray-900" id="total-docs">Loading...</dd>
+                </div>
+            </div>
+
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <dt class="text-sm font-medium text-gray-500 truncate">Total Collections</dt>
+                    <dd class="mt-1 text-3xl font-semibold text-gray-900" id="total-collections">Loading...</dd>
+                </div>
+            </div>
+
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <dt class="text-sm font-medium text-gray-500 truncate">Storage Used</dt>
+                    <dd class="mt-1 text-3xl font-semibold text-gray-900" id="storage-used">Loading...</dd>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        const response = await fetch('/admin/stats');
+        const stats = await response.json();
+        
+        document.getElementById('total-docs').textContent = stats.total_documents;
+        document.getElementById('total-collections').textContent = stats.total_collections;
+        document.getElementById('storage-used').textContent = `${stats.storage_used} MB`;
+    } catch (error) {
+        console.error('Error loading stats:', error);
+    }
+});
+</script>
+{% endblock %}
