@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         resultsPanel.style.display = 'block';
         progressBar.style.width = '0%';
         scrapedUrls.innerHTML = '';
+        startLogging();  // Start logging when scraping begins
 
         const data = {
             urls: urls,
@@ -39,19 +40,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
             while (true) {
                 const {value, done} = await reader.read();
-                if (done) break;
+                if (done) {
+                    stopLogging();  // Stop logging when scraping is done
+                    break;
+                }
                 
-                const events = decoder.decode(value).split('\n').filter(Boolean);
+                const events = decoder.decode(value).split('\n\n');
                 events.forEach(event => {
-                    const data = JSON.parse(event);
-                    updateProgress(data);
+                    if (event.startsWith('data: ')) {
+                        try {
+                            const data = JSON.parse(event.slice(6)); // Remove 'data: ' prefix
+                            updateProgress(data);
+                        } catch (err) {
+                            console.log('Error parsing event:', event);
+                        }
+                    }
                 });
             }
         } catch (error) {
             console.error('Error:', error);
             progressText.textContent = 'Error occurred while scraping';
+            stopLogging();  // Stop logging on error
         }
     });
+
     function updateLogs() {
         fetch('/admin/scrape-logs')
             .then(response => response.json())
@@ -63,16 +75,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 logsDiv.scrollTop = logsDiv.scrollHeight;
             });
     }
-    
+
     // Update logs every few seconds while scraping
     let logsInterval;
     function startLogging() {
         logsInterval = setInterval(updateLogs, 2000);
     }
-    
+
     function stopLogging() {
-        clearInterval(logsInterval);
+        if (logsInterval) {
+            clearInterval(logsInterval);
+        }
     }
+
     function updateProgress(data) {
         if (data.type === 'progress') {
             progressBar.style.width = `${data.percentage}%`;
@@ -86,6 +101,18 @@ document.addEventListener('DOMContentLoaded', function() {
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                     </svg>
                     <span class="text-sm text-gray-900">${data.url}</span>
+                </div>
+            `;
+            scrapedUrls.appendChild(li);
+        } else if (data.type === 'error') {
+            const li = document.createElement('li');
+            li.className = 'py-3';
+            li.innerHTML = `
+                <div class="flex items-center space-x-3">
+                    <svg class="h-5 w-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm text-red-600">${data.message}</span>
                 </div>
             `;
             scrapedUrls.appendChild(li);

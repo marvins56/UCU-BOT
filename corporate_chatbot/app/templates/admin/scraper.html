@@ -1,88 +1,91 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="min-h-screen bg-gray-50 py-8 px-4">
-    <div class="max-w-3xl mx-auto">
+<div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
+    <div class="max-w-5xl mx-auto px-4">
         <!-- Header -->
         <div class="mb-8">
-            <h1 class="text-2xl font-bold text-gray-900">Web Content Scraper</h1>
-            <p class="mt-1 text-sm text-gray-500">Add website content to your knowledge base</p>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Web Content Scraper</h1>
+            <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Add website content to your knowledge base</p>
         </div>
 
-        <!-- URL Input Form -->
-        <div class="bg-white rounded-lg shadow p-6">
-            <form id="scraper-form" class="space-y-6">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">URLs</label>
-                    <div class="mt-1">
-                        <textarea 
-                            id="urls"
-                            name="urls"
-                            rows="4"
-                            class="shadow-sm block w-full sm:text-sm border border-gray-300 rounded-md p-2"
-                            placeholder="Enter URLs (one per line)"
-                        ></textarea>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
+        <!-- Main Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Input Form -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                <form id="scraper-form" class="space-y-6">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Max Depth</label>
-                        <select id="depth" name="depth" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
-                            <option value="1">1 level</option>
-                            <option value="2">2 levels</option>
-                            <option value="3">3 levels</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Domain Restriction</label>
-                        <div class="mt-2">
-                            <label class="inline-flex items-center">
-                                <input type="checkbox" id="same-domain" name="same-domain" checked class="form-checkbox h-4 w-4 text-blue-600">
-                                <span class="ml-2 text-sm text-gray-600">Stay on same domain</span>
-                            </label>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">URLs</label>
+                        <div class="mt-1">
+                            <textarea 
+                                id="urls"
+                                name="urls"
+                                rows="4"
+                                class="shadow-sm block w-full sm:text-sm border border-gray-300 dark:border-gray-600 rounded-md p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                placeholder="Enter URLs (one per line)"
+                            ></textarea>
                         </div>
                     </div>
-                </div>
 
-                <div>
-                    <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                        Start Scraping
-                    </button>
-                </div>
-            </form>
-        </div>
-
-        <!-- Results Panel -->
-        <div class="mt-8 bg-white rounded-lg shadow" id="results-panel" style="display: none;">
-            <div class="p-6">
-                <h3 class="text-lg font-medium text-gray-900">Scraping Progress</h3>
-                <div class="mt-4">
-                    <div class="w-full bg-gray-200 rounded-full h-2.5">
-                        <div class="bg-blue-600 h-2.5 rounded-full" id="progress-bar" style="width: 0%"></div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Max Depth</label>
+                            <select id="depth" name="depth" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100">
+                                <option value="1">1 level</option>
+                                <option value="2">2 levels</option>
+                                <option value="3">3 levels</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Domain Restriction</label>
+                            <div class="mt-2">
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" id="same-domain" name="same-domain" checked class="form-checkbox h-4 w-4 text-blue-600 dark:text-blue-400">
+                                    <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">Stay on same domain</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <p class="mt-2 text-sm text-gray-500" id="progress-text">Processing...</p>
-                </div>
-                
-                <div class="mt-6">
-                    <h4 class="text-sm font-medium text-gray-900">Scraped URLs</h4>
-                    <ul class="mt-2 divide-y divide-gray-200" id="scraped-urls">
-                        <!-- Scraped URLs will be listed here -->
-                    </ul>
-                </div>
 
-                <div class="mt-4">
-                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Scraping Logs</h3>
-                    <div id="scrape-logs" class="mt-2 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg h-64 overflow-y-auto">
-                        <!-- Logs will appear here -->
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Start Scraping
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Results Panel -->
+            <div id="results-panel" class="bg-white dark:bg-gray-800 rounded-lg shadow" style="display: none;">
+                <div class="p-6">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Scraping Progress</h3>
+                    
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mb-4">
+                        <div class="bg-blue-600 h-2.5 rounded-full transition-all duration-300" id="progress-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-6" id="progress-text">Ready to start...</p>
+
+                    <!-- Scraped URLs List -->
+                    <div class="mt-6">
+                        <h4 class="text-sm font-medium text-gray-900 dark:text-white mb-2">Scraped URLs</h4>
+                        <div class="mt-2 max-h-96 overflow-y-auto">
+                            <ul class="divide-y divide-gray-200 dark:divide-gray-700" id="scraped-urls">
+                                <!-- URLs will be listed here -->
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-       
-
-
+        <!-- Logs Section -->
+        <div class="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+            <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Scraping Logs</h3>
+            <div id="scrape-logs" class="bg-gray-50 dark:bg-gray-900 rounded-lg p-4 h-48 overflow-y-auto font-mono text-sm">
+                <!-- Logs will appear here -->
+            </div>
+        </div>
     </div>
 </div>
 
