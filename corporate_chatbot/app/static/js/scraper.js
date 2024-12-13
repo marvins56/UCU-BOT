@@ -52,7 +52,27 @@ document.addEventListener('DOMContentLoaded', function() {
             progressText.textContent = 'Error occurred while scraping';
         }
     });
-
+    function updateLogs() {
+        fetch('/admin/scrape-logs')
+            .then(response => response.json())
+            .then(data => {
+                const logsDiv = document.getElementById('scrape-logs');
+                logsDiv.innerHTML = data.logs.map(log => 
+                    `<div class="text-sm text-gray-600 dark:text-gray-400">${log}</div>`
+                ).join('');
+                logsDiv.scrollTop = logsDiv.scrollHeight;
+            });
+    }
+    
+    // Update logs every few seconds while scraping
+    let logsInterval;
+    function startLogging() {
+        logsInterval = setInterval(updateLogs, 2000);
+    }
+    
+    function stopLogging() {
+        clearInterval(logsInterval);
+    }
     function updateProgress(data) {
         if (data.type === 'progress') {
             progressBar.style.width = `${data.percentage}%`;
