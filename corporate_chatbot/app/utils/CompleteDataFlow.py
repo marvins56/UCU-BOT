@@ -1,6 +1,8 @@
 from typing import Dict, List
 import asyncio
 
+from corporate_chatbot.app.controllers.main_controller import ChatbotController
+
 class CompleteDataFlow:
     def __init__(self):
         self.controller = ChatbotController()

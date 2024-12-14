@@ -1,14 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
-    <div class="max-w-5xl mx-auto px-4">
+    <div class="max-w-7xl mx-auto px-4">
         <!-- Header -->
         <div class="mb-8">
             <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Web Content Scraper</h1>
             <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Add website content to your knowledge base</p>
         </div>
 
-        <!-- Main Content -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <!-- Input Form -->
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
@@ -21,69 +20,103 @@
                                 name="urls"
                                 rows="4"
                                 class="shadow-sm block w-full sm:text-sm border border-gray-300 dark:border-gray-600 rounded-md p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                                placeholder="Enter URLs (one per line)"
-                            ></textarea>
+                                placeholder="Enter URLs (one per line)"></textarea>
                         </div>
+                        <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Enter each URL on a new line</p>
                     </div>
 
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Max Depth</label>
-                            <select id="depth" name="depth" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100">
+                            <select 
+                                id="depth" 
+                                name="depth" 
+                                class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100">
                                 <option value="1">1 level</option>
-                                <option value="2">2 levels</option>
+                                <option value="2" selected>2 levels</option>
                                 <option value="3">3 levels</option>
                             </select>
+                            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">How deep to follow links</p>
                         </div>
                         
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Domain Restriction</label>
                             <div class="mt-2">
                                 <label class="inline-flex items-center">
-                                    <input type="checkbox" id="same-domain" name="same-domain" checked class="form-checkbox h-4 w-4 text-blue-600 dark:text-blue-400">
+                                    <input type="checkbox" id="same-domain" name="same-domain" checked 
+                                           class="form-checkbox h-4 w-4 text-blue-600 dark:text-blue-400">
                                     <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">Stay on same domain</span>
                                 </label>
                             </div>
+                            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Only follow links on the same domain</p>
                         </div>
                     </div>
 
                     <div>
-                        <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        <button type="submit" 
+                                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
                             Start Scraping
                         </button>
                     </div>
                 </form>
             </div>
 
-            <!-- Results Panel -->
-            <div id="results-panel" class="bg-white dark:bg-gray-800 rounded-lg shadow" style="display: none;">
-                <div class="p-6">
-                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Scraping Progress</h3>
-                    
-                    <!-- Progress Bar -->
-                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mb-4">
-                        <div class="bg-blue-600 h-2.5 rounded-full transition-all duration-300" id="progress-bar" style="width: 0%"></div>
-                    </div>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-6" id="progress-text">Ready to start...</p>
-
-                    <!-- Scraped URLs List -->
-                    <div class="mt-6">
-                        <h4 class="text-sm font-medium text-gray-900 dark:text-white mb-2">Scraped URLs</h4>
-                        <div class="mt-2 max-h-96 overflow-y-auto">
-                            <ul class="divide-y divide-gray-200 dark:divide-gray-700" id="scraped-urls">
-                                <!-- URLs will be listed here -->
-                            </ul>
-                        </div>
-                    </div>
+            <!-- Live Logs Panel -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Live Scraping Logs</h3>
+                <div id="scrape-logs" 
+                     class="h-[500px] overflow-y-auto bg-gray-50 dark:bg-gray-900 rounded-lg p-4 font-mono text-sm">
+                    <!-- Logs will appear here -->
                 </div>
             </div>
         </div>
 
-        <!-- Logs Section -->
-        <div class="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-            <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Scraping Logs</h3>
-            <div id="scrape-logs" class="bg-gray-50 dark:bg-gray-900 rounded-lg p-4 h-48 overflow-y-auto font-mono text-sm">
-                <!-- Logs will appear here -->
+        <!-- Results Panel -->
+        <div id="results-panel" class="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow" style="display: none;">
+            <div class="p-6">
+                <!-- Stats Section -->
+                <div class="grid grid-cols-4 gap-4 mb-6">
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Pages Scraped</dt>
+                        <dd id="pages-scraped" class="mt-1 text-2xl font-semibold text-gray-900 dark:text-white">0</dd>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Links Found</dt>
+                        <dd id="links-found" class="mt-1 text-2xl font-semibold text-gray-900 dark:text-white">0</dd>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Content Size</dt>
+                        <dd id="content-size" class="mt-1 text-2xl font-semibold text-gray-900 dark:text-white">0 chars</dd>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg shadow">
+                        <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Time Elapsed</dt>
+                        <dd id="time-elapsed" class="mt-1 text-2xl font-semibold text-gray-900 dark:text-white">0s</dd>
+                    </div>
+                </div>
+
+                <!-- Progress Section -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Scraping Progress</h3>
+                    <div class="relative pt-1">
+                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 dark:bg-gray-700">
+                            <div id="progress-bar" 
+                                 class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 transition-all duration-300"
+                                 style="width: 0%">
+                            </div>
+                        </div>
+                        <p id="progress-text" class="text-sm text-gray-600 dark:text-gray-400">Ready to start...</p>
+                    </div>
+                </div>
+
+                <!-- Scraped Content -->
+                <div class="mt-6">
+                    <h4 class="text-sm font-medium text-gray-900 dark:text-white mb-4">Scraped Content</h4>
+                    <div class="overflow-y-auto max-h-96 border border-gray-200 dark:border-gray-700 rounded-lg">
+                        <ul id="scraped-urls" class="divide-y divide-gray-200 dark:divide-gray-700">
+                            <!-- Results will appear here -->
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
