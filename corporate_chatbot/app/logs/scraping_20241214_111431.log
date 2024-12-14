@@ -1,0 +1,113 @@
+2024-12-14 11:14:31,315 - INFO - Set base domain: cse-ucu.com
+2024-12-14 11:14:31,316 - INFO - Scraping URL: https://cse-ucu.com/ at depth 0
+2024-12-14 11:14:31,318 - INFO - Loading content from https://cse-ucu.com/
+2024-12-14 11:14:34,101 - INFO - Found 145 raw links on https://cse-ucu.com/
+2024-12-14 11:14:34,106 - INFO - Processed 141 valid URLs
+2024-12-14 11:14:34,182 - INFO - Removed 82 unwanted elements
+2024-12-14 11:14:34,218 - INFO - Found content in main tag
+2024-12-14 11:14:34,220 - INFO - Extracted 19 characters of content from https://cse-ucu.com/
+2024-12-14 11:14:34,224 - INFO - Following link: https://cse-ucu.com/code-buddy
+2024-12-14 11:14:34,226 - INFO - Scraping URL: https://cse-ucu.com/code-buddy at depth 1
+2024-12-14 11:14:34,228 - INFO - Loading content from https://cse-ucu.com/code-buddy
+2024-12-14 11:14:39,047 - INFO - Found 78 raw links on https://cse-ucu.com/code-buddy
+2024-12-14 11:14:39,049 - INFO - Processed 74 valid URLs
+2024-12-14 11:14:39,083 - INFO - Removed 69 unwanted elements
+2024-12-14 11:14:39,097 - INFO - Found content in article tag
+2024-12-14 11:14:39,100 - INFO - Extracted 67 characters of content from https://cse-ucu.com/code-buddy
+2024-12-14 11:14:39,102 - INFO - Following link: https://cse-ucu.com/shortscourses/short-cyber-security/
+2024-12-14 11:14:39,110 - INFO - Scraping URL: https://cse-ucu.com/shortscourses/short-cyber-security/ at depth 2
+2024-12-14 11:14:39,111 - INFO - Loading content from https://cse-ucu.com/shortscourses/short-cyber-security/
+2024-12-14 11:14:41,281 - INFO - Found 87 raw links on https://cse-ucu.com/shortscourses/short-cyber-security/
+2024-12-14 11:14:41,287 - INFO - Processed 82 valid URLs
+2024-12-14 11:14:41,360 - INFO - Removed 73 unwanted elements
+2024-12-14 11:14:41,398 - INFO - Found content in article tag
+2024-12-14 11:14:41,404 - INFO - Extracted 1919 characters of content from https://cse-ucu.com/shortscourses/short-cyber-security/
+2024-12-14 11:14:41,413 - INFO - Following link: https://cse-ucu.com/pcc/
+2024-12-14 11:14:41,415 - INFO - Scraping URL: https://cse-ucu.com/pcc/ at depth 2
+2024-12-14 11:14:41,419 - INFO - Loading content from https://cse-ucu.com/pcc/
+2024-12-14 11:14:43,413 - INFO - Found 84 raw links on https://cse-ucu.com/pcc/
+2024-12-14 11:14:43,416 - INFO - Processed 79 valid URLs
+2024-12-14 11:14:43,465 - INFO - Removed 73 unwanted elements
+2024-12-14 11:14:43,489 - INFO - Found content in article tag
+2024-12-14 11:14:43,495 - INFO - Extracted 1685 characters of content from https://cse-ucu.com/pcc/
+2024-12-14 11:14:43,496 - INFO - Following link: https://cse-ucu.com/free4vacists/
+2024-12-14 11:14:43,498 - INFO - Scraping URL: https://cse-ucu.com/free4vacists/ at depth 2
+2024-12-14 11:14:43,505 - INFO - Loading content from https://cse-ucu.com/free4vacists/
+2024-12-14 11:14:45,865 - INFO - Found 80 raw links on https://cse-ucu.com/free4vacists/
+2024-12-14 11:14:45,881 - INFO - Processed 75 valid URLs
+2024-12-14 11:14:45,994 - INFO - Removed 73 unwanted elements
+2024-12-14 11:14:46,024 - INFO - Found content in article tag
+2024-12-14 11:14:46,026 - INFO - Extracted 954 characters of content from https://cse-ucu.com/free4vacists/
+2024-12-14 11:14:46,030 - INFO - Following link: https://cse-ucu.com/csea
+2024-12-14 11:14:46,041 - INFO - Scraping URL: https://cse-ucu.com/csea at depth 2
+2024-12-14 11:14:46,045 - INFO - Loading content from https://cse-ucu.com/csea
+2024-12-14 11:14:48,526 - INFO - Found 84 raw links on https://cse-ucu.com/csea
+2024-12-14 11:14:48,530 - INFO - Processed 79 valid URLs
+2024-12-14 11:14:48,597 - INFO - Removed 71 unwanted elements
+2024-12-14 11:14:48,637 - INFO - Found content in article tag
+2024-12-14 11:14:48,641 - INFO - Extracted 2768 characters of content from https://cse-ucu.com/csea
+2024-12-14 11:14:48,643 - INFO - Following link: https://cse-ucu.com/heshe-codes-club/
+2024-12-14 11:14:48,646 - INFO - Scraping URL: https://cse-ucu.com/heshe-codes-club/ at depth 2
+2024-12-14 11:14:48,654 - INFO - Loading content from https://cse-ucu.com/heshe-codes-club/
+2024-12-14 11:14:51,601 - INFO - Found 80 raw links on https://cse-ucu.com/heshe-codes-club/
+2024-12-14 11:14:51,605 - INFO - Processed 76 valid URLs
+2024-12-14 11:14:51,669 - INFO - Removed 72 unwanted elements
+2024-12-14 11:14:51,724 - INFO - Found content in article tag
+2024-12-14 11:14:51,727 - INFO - Extracted 1782 characters of content from https://cse-ucu.com/heshe-codes-club/
+2024-12-14 11:14:51,729 - INFO - Following link: https://cse-ucu.com/faq
+2024-12-14 11:14:51,731 - INFO - Scraping URL: https://cse-ucu.com/faq at depth 2
+2024-12-14 11:14:51,736 - INFO - Loading content from https://cse-ucu.com/faq
+2024-12-14 11:14:55,380 - INFO - Found 78 raw links on https://cse-ucu.com/faq
+2024-12-14 11:14:55,391 - INFO - Processed 74 valid URLs
+2024-12-14 11:14:55,440 - INFO - Removed 69 unwanted elements
+2024-12-14 11:14:55,458 - INFO - Found content in article tag
+2024-12-14 11:14:55,461 - INFO - Extracted 67 characters of content from https://cse-ucu.com/faq
+2024-12-14 11:14:55,470 - INFO - Following link: https://cse-ucu.com/events/
+2024-12-14 11:14:55,474 - INFO - Scraping URL: https://cse-ucu.com/events/ at depth 2
+2024-12-14 11:14:55,477 - INFO - Loading content from https://cse-ucu.com/events/
+2024-12-14 11:14:58,158 - INFO - Found 82 raw links on https://cse-ucu.com/events/
+2024-12-14 11:14:58,161 - INFO - Processed 78 valid URLs
+2024-12-14 11:14:58,226 - INFO - Removed 71 unwanted elements
+2024-12-14 11:14:58,264 - INFO - Found content in article tag
+2024-12-14 11:14:58,266 - INFO - Extracted 768 characters of content from https://cse-ucu.com/events/
+2024-12-14 11:14:58,268 - INFO - Following link: https://wa.me/256708114300
+2024-12-14 11:14:58,269 - INFO - Skipping https://wa.me/256708114300 - Different domain
+2024-12-14 11:14:58,271 - INFO - Following link: https://estudiar.vamtam.com/?s=programs
+2024-12-14 11:14:58,273 - INFO - Skipping https://estudiar.vamtam.com/?s=programs - Different domain
+2024-12-14 11:14:58,274 - INFO - Following link: https://estudiar.vamtam.com/?s=scholarships
+2024-12-14 11:14:58,275 - INFO - Skipping https://estudiar.vamtam.com/?s=scholarships - Different domain
+2024-12-14 11:14:58,281 - INFO - Following link: https://cse-ucu.com/csea/
+2024-12-14 11:14:58,287 - INFO - Scraping URL: https://cse-ucu.com/csea/ at depth 2
+2024-12-14 11:14:58,289 - INFO - Loading content from https://cse-ucu.com/csea/
+2024-12-14 11:15:01,044 - INFO - Found 84 raw links on https://cse-ucu.com/csea/
+2024-12-14 11:15:01,048 - INFO - Processed 79 valid URLs
+2024-12-14 11:15:01,113 - INFO - Removed 71 unwanted elements
+2024-12-14 11:15:01,159 - INFO - Found content in article tag
+2024-12-14 11:15:01,163 - INFO - Extracted 2768 characters of content from https://cse-ucu.com/csea/
+2024-12-14 11:15:01,166 - INFO - Following link: https://cse-ucu.com/apply-form/
+2024-12-14 11:15:01,168 - INFO - Scraping URL: https://cse-ucu.com/apply-form/ at depth 2
+2024-12-14 11:15:01,170 - INFO - Loading content from https://cse-ucu.com/apply-form/
+2024-12-14 11:15:05,665 - INFO - Found 78 raw links on https://cse-ucu.com/apply-form/
+2024-12-14 11:15:05,669 - INFO - Processed 74 valid URLs
+2024-12-14 11:15:05,716 - INFO - Removed 69 unwanted elements
+2024-12-14 11:15:05,740 - INFO - Found content in article tag
+2024-12-14 11:15:05,742 - INFO - Extracted 67 characters of content from https://cse-ucu.com/apply-form/
+2024-12-14 11:15:05,744 - INFO - Following link: https://cse-ucu.com/data-analytics-club/
+2024-12-14 11:15:05,747 - INFO - Scraping URL: https://cse-ucu.com/data-analytics-club/ at depth 2
+2024-12-14 11:15:05,757 - INFO - Loading content from https://cse-ucu.com/data-analytics-club/
+2024-12-14 11:15:08,454 - INFO - Found 89 raw links on https://cse-ucu.com/data-analytics-club/
+2024-12-14 11:15:08,460 - INFO - Processed 85 valid URLs
+2024-12-14 11:15:08,532 - INFO - Removed 71 unwanted elements
+2024-12-14 11:15:08,573 - INFO - Found content in article tag
+2024-12-14 11:15:08,578 - INFO - Extracted 3702 characters of content from https://cse-ucu.com/data-analytics-club/
+2024-12-14 11:15:08,580 - INFO - Following link: https://cse-ucu.com/kickstarting-our-long-term-data-analytics-project/
+2024-12-14 11:15:08,583 - INFO - Scraping URL: https://cse-ucu.com/kickstarting-our-long-term-data-analytics-project/ at depth 2
+2024-12-14 11:15:08,585 - INFO - Loading content from https://cse-ucu.com/kickstarting-our-long-term-data-analytics-project/
+2024-12-14 11:15:11,207 - INFO - Found 82 raw links on https://cse-ucu.com/kickstarting-our-long-term-data-analytics-project/
+2024-12-14 11:15:11,210 - INFO - Processed 77 valid URLs
+2024-12-14 11:15:11,256 - INFO - Removed 70 unwanted elements
+2024-12-14 11:15:11,282 - INFO - Found content in article tag
+2024-12-14 11:15:11,286 - INFO - Extracted 1939 characters of content from https://cse-ucu.com/kickstarting-our-long-term-data-analytics-project/
+2024-12-14 11:15:11,288 - INFO - Following link: https://cse-ucu.com/students-liason/
+2024-12-14 11:15:11,290 - INFO - Scraping URL: https://cse-ucu.com/students-liason/ at depth 2
+2024-12-14 11:15:11,299 - INFO - Loading content from https://cse-ucu.com/students-liason/

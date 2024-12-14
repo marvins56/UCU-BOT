@@ -49,14 +49,35 @@ def scrape():
         results = []
         total_links = 0
         total_chars = 0
+        documents_stored = 0
         
         for url in urls:
             try:
                 url_results = await scraper.scrape_url(url)
                 results.extend(url_results)
                 
-                # Calculate stats
+                # Process and store each result
                 for result in url_results:
+                    try:
+                        # Add to vector store
+                        data_manager.add_to_collection(
+                            collection_name="scraped_content",
+                            texts=[result['content']],
+                            metadatas=[{
+                                'url': result['url'],
+                                'title': result['title'],
+                                'scraped_at': result['scraped_at'],
+                                'source_type': 'web_scrape',
+                                'domain': result['metadata']['domain'],
+                                'depth': result['depth'],
+                                'links_found': result['metadata']['links_found']
+                            }]
+                        )
+                        documents_stored += 1
+                        logger.info(f"Stored document from {result['url']} in vector database")
+                    except Exception as e:
+                        logger.error(f"Error storing document from {result['url']}: {str(e)}")
+
                     total_chars += len(result['content'])
                     total_links += result['metadata']['links_found']
                     
@@ -68,7 +89,8 @@ def scrape():
             'stats': {
                 'total_pages': len(results),
                 'total_links': total_links,
-                'total_chars': total_chars
+                'total_chars': total_chars,
+                'documents_stored': documents_stored
             }
         }
 
@@ -96,7 +118,6 @@ def scrape():
     finally:
         if 'loop' in locals() and not loop.is_closed():
             loop.close()
-
 async def collect_results(async_gen):
     """Helper function to collect async generator results"""
     results = []
@@ -130,10 +151,29 @@ def delete_collection(name):
 
 @admin.route('/admin/search', methods=['POST'])
 def search():
-    query = request.json.get('query')
-    results = data_manager.search(query)
-    return jsonify(results)
+    try:
+        query = request.json.get('query')
+        collection_name = request.json.get('collection')  # Optional collection name
+        
+        if not query:
+            return jsonify({'error': 'No query provided'}), 400
 
+        results = data_manager.search(query, collection_name=collection_name)
+        
+        logger.info(f"Search for '{query}' found {len(results)} results")
+        
+        return jsonify({
+            'status': 'success',
+            'results': results,
+            'count': len(results)
+        })
+
+    except Exception as e:
+        logger.error(f"Search error: {str(e)}")
+        return jsonify({
+            'status': 'error',
+            'message': str(e)
+        }), 500
 @admin.route('/admin/upload', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
