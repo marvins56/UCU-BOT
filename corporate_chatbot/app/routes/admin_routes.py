@@ -1,9 +1,11 @@
 from io import StringIO
 import os
-from flask import Blueprint, render_template, request, Response, stream_with_context, jsonify
+from flask import Blueprint, redirect, render_template, request, Response, session, stream_with_context, jsonify, url_for
 import json
 import asyncio
 import logging
+from functools import wraps
+from corporate_chatbot.app.utils.auth import check_credentials
 
 from ..utils.web_scraper import WebScraper
 from ..utils.data_pipeline import DataManager
@@ -17,22 +19,27 @@ logger = logging.getLogger(__name__)
 
 
 @admin.route('/admin/manage')
+@login_required
 def manage():
     return render_template('admin/manage.html')
 
 @admin.route('/admin/upload')
+@login_required
 def upload_page():
     return render_template('admin/upload.html')
 
 @admin.route('/admin/scraper')
+@login_required
 def scraper_page():
     return render_template('admin/scraper.html')
 
 @admin.route('/admin/dashboard')
+@login_required
 def dashboard():
     return render_template('admin/dashboard.html')
 
 @admin.route('/admin/analytics')
+@login_required
 def analytics():
     return render_template('admin/analytics.html')
 
@@ -224,3 +231,29 @@ def handle_error(error):
         'message': 'An error occurred while processing your request.'
     }
     return jsonify(response), 500
+@admin.route('/admin/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'GET':
+        return render_template('admin/login.html')
+    
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+    
+    if check_credentials(username, password):
+        session['logged_in'] = True
+        return jsonify({'success': True})
+    
+    return jsonify({
+        'success': False,
+        'message': 'Invalid username or password'
+    })
+
+# Add this decorator to routes that need protection
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not session.get('logged_in'):
+            return redirect(url_for('admin.login'))
+        return f(*args, **kwargs)
+    return decorated_function

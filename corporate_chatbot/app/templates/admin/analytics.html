@@ -1,32 +1,41 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="bg-white shadow rounded-lg divide-y divide-gray-200">
+<div class="bg-white dark:bg-gray-800 shadow rounded-lg divide-y divide-gray-200 dark:divide-gray-700">
     <!-- Header -->
     <div class="px-4 py-5 sm:px-6">
-        <h2 class="text-2xl font-bold text-gray-900">Analytics Dashboard</h2>
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Analytics Dashboard</h2>
     </div>
 
     <!-- Stats Overview -->
     <div class="px-4 py-5 sm:p-6">
         <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            <div class="bg-white overflow-hidden shadow rounded-lg">
+            <!-- Documents Processed Card -->
+            <div class="bg-white dark:bg-gray-700 overflow-hidden shadow rounded-lg transition-colors">
                 <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">Documents Processed</dt>
-                    <dd class="mt-1 text-3xl font-semibold text-gray-900" id="docs-processed">Loading...</dd>
+                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-300 truncate">Documents Processed</dt>
+                    <dd class="mt-1 text-3xl font-semibold text-gray-900 dark:text-white" id="docs-processed">
+                        <span class="animate-pulse">Loading...</span>
+                    </dd>
                 </div>
             </div>
 
-            <div class="bg-white overflow-hidden shadow rounded-lg">
+            <!-- URLs Scraped Card -->
+            <div class="bg-white dark:bg-gray-700 overflow-hidden shadow rounded-lg transition-colors">
                 <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">URLs Scraped</dt>
-                    <dd class="mt-1 text-3xl font-semibold text-gray-900" id="urls-scraped">Loading...</dd>
+                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-300 truncate">URLs Scraped</dt>
+                    <dd class="mt-1 text-3xl font-semibold text-gray-900 dark:text-white" id="urls-scraped">
+                        <span class="animate-pulse">Loading...</span>
+                    </dd>
                 </div>
             </div>
 
-            <div class="bg-white overflow-hidden shadow rounded-lg">
+            <!-- Total Data Size Card -->
+            <div class="bg-white dark:bg-gray-700 overflow-hidden shadow rounded-lg transition-colors">
                 <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">Total Data Size</dt>
-                    <dd class="mt-1 text-3xl font-semibold text-gray-900" id="data-size">Loading...</dd>
+                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-300 truncate">Total Data Size</dt>
+                    <dd class="mt-1 text-3xl font-semibold text-gray-900 dark:text-white" id="data-size">
+                        <span class="animate-pulse">Loading...</span>
+                    </dd>
                 </div>
             </div>
         </div>
@@ -34,11 +43,25 @@
 
     <!-- Recent Activity -->
     <div class="px-4 py-5 sm:p-6">
-        <h3 class="text-lg font-medium text-gray-900 mb-4">Recent Activity</h3>
+        <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Recent Activity</h3>
         <div class="flow-root">
             <ul role="list" class="-mb-8" id="activity-list">
                 <!-- Activity items will be inserted here -->
             </ul>
+        </div>
+
+        <!-- Error Message (hidden by default) -->
+        <div id="error-message" class="hidden mt-4 bg-red-50 dark:bg-red-900 border-l-4 border-red-400 p-4">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-red-700 dark:text-red-200" id="error-text"></p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -46,14 +69,75 @@
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
     try {
+        // Show loading states with animation
+        ['docs-processed', 'urls-scraped', 'data-size'].forEach(id => {
+            document.getElementById(id).innerHTML = `
+                <span class="inline-block animate-pulse">Loading...</span>
+            `;
+        });
+
         const response = await fetch('/admin/stats');
         const stats = await response.json();
         
-        document.getElementById('docs-processed').textContent = stats.total_documents;
-        document.getElementById('urls-scraped').textContent = stats.urls_scraped || '0';
-        document.getElementById('data-size').textContent = `${stats.storage_used} MB`;
+        // Update stats with transition
+        const updateWithTransition = (id, value) => {
+            const element = document.getElementById(id);
+            element.style.opacity = '0';
+            setTimeout(() => {
+                element.textContent = value;
+                element.style.opacity = '1';
+            }, 150);
+        };
+
+        updateWithTransition('docs-processed', stats.total_documents);
+        updateWithTransition('urls-scraped', stats.urls_scraped || '0');
+        updateWithTransition('data-size', `${stats.storage_used} MB`);
+
+        // Add hover effects to cards
+        document.querySelectorAll('.rounded-lg').forEach(card => {
+            card.classList.add('hover:shadow-lg', 'transition-shadow', 'duration-300');
+        });
+
     } catch (error) {
         console.error('Error loading analytics:', error);
+        
+        // Show error message
+        const errorDiv = document.getElementById('error-message');
+        const errorText = document.getElementById('error-text');
+        errorDiv.classList.remove('hidden');
+        errorText.textContent = 'Error loading analytics data. Please try again later.';
+
+        // Update stats to show error state
+        ['docs-processed', 'urls-scraped', 'data-size'].forEach(id => {
+            document.getElementById(id).innerHTML = `
+                <span class="text-red-500 dark:text-red-400">Error</span>
+            `;
+        });
+    }
+
+    // Function to add activity item (if you want to add this feature)
+    function addActivityItem(activity) {
+        const list = document.getElementById('activity-list');
+        const item = document.createElement('li');
+        item.className = 'relative pb-8';
+        item.innerHTML = `
+            <div class="relative flex space-x-3">
+                <div>
+                    <span class="h-8 w-8 rounded-full bg-blue-500 dark:bg-blue-600 flex items-center justify-center ring-8 ring-white dark:ring-gray-800">
+                        <svg class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="min-w-0 flex-1">
+                    <div class="text-sm text-gray-500 dark:text-gray-400">
+                        ${activity.message}
+                        <span class="ml-2 text-gray-400 dark:text-gray-500">${activity.time}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+        list.appendChild(item);
     }
 });
 </script>

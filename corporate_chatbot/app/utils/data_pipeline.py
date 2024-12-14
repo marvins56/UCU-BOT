@@ -88,18 +88,39 @@ class DataManager:
             return 0
 
     def get_storage_used(self) -> str:
-        """Get approximate storage used"""
+        """Get storage used based on documents"""
         try:
-            # This is a rough estimation
             collections = self.chroma_client.list_collections()
             total_size = 0
+            total_docs = 0
+            
             for collection in collections:
+                # Get collection data
                 data = collection.get()
-                # Rough estimation of embeddings size
-                total_size += len(data.get('embeddings', [])) * 768 * 4  # 768-dim vectors, 4 bytes per float
-            return f"{total_size / (1024 * 1024):.2f}"  # Convert to MB
+                documents = data.get('documents', [])
+                metadatas = data.get('metadatas', [])
+                
+                # Calculate size of documents
+                for doc in documents:
+                    if doc:
+                        total_size += len(doc.encode('utf-8'))  # Size of text content
+                
+                # Calculate size of metadata
+                for metadata in metadatas:
+                    if metadata:
+                        total_size += len(str(metadata).encode('utf-8'))  # Size of metadata
+                
+                total_docs += len(documents)
+                
+                # Add embedding size (768-dimensional float vectors)
+                total_size += len(documents) * 768 * 4  # 4 bytes per float
+            
+            # Convert to MB with 2 decimal places
+            size_in_mb = total_size / (1024 * 1024)
+            return f"{size_in_mb:.2f}"
+
         except Exception as e:
-            print(f"Error calculating storage: {str(e)}")
+            self.logger.error(f"Error calculating storage: {str(e)}")
             return "0.00"
 
     def create_collection(self, collection_name: str) -> bool:
@@ -177,7 +198,7 @@ class DataManager:
                             })
 
             # Sort results by relevance (if you have a score in the metadata)
-            # results.sort(key=lambda x: x.get('metadata', {}).get('score', 0), reverse=True)
+            results.sort(key=lambda x: x.get('metadata', {}).get('score', 0), reverse=True)
             
             return results[:k]  # Return top k results across all collections
 

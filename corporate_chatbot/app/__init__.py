@@ -5,6 +5,7 @@ from .routes import admin_routes, user_routes
 
 def create_app():
     app = Flask(__name__)
+    app.secret_key = 'marvin_secret'
     CORS(app)  # Enable CORS for all routes
     
     # Initialize controller

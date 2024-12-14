@@ -34,26 +34,37 @@
         </div>
     </div>
 
-    <!-- Search Section -->
-    <div class="px-4 py-5 sm:p-6">
-        <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Search Collections</h3>
-        <div class="max-w-xl">
-            <div class="mt-1 flex rounded-md shadow-sm">
-                <input type="text" 
-                       id="search-input" 
-                       class="focus:ring-blue-500 focus:border-blue-500 flex-1 block w-full rounded-md sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white" 
-                       placeholder="Search in collections...">
-                <button type="button" 
-                        id="search-btn" 
-                        class="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
-                    Search
-                </button>
+   <!-- Search Section -->
+<div class="px-4 py-5 sm:p-6">
+    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Search Collections</h3>
+    <div class="max-w-xl">
+        <form id="search-form" class="space-y-4">
+            <!-- Collection Selector -->
+            <div class="flex items-center space-x-4">
+                <select id="collection-select" 
+                        class="block w-1/3 rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-blue-500 focus:border-blue-500">
+                    <option value="">All Collections</option>
+                </select>
+                
+                <div class="flex-1 flex rounded-md shadow-sm">
+                    <input type="text" 
+                           id="search-input" 
+                           class="focus:ring-blue-500 focus:border-blue-500 flex-1 block w-full rounded-md sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white" 
+                           placeholder="Search in collections...">
+                    <button type="submit" 
+                            class="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+                        Search
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="mt-6" id="search-results">
-            <!-- Search results will appear here -->
-        </div>
+        </form>
     </div>
+    <div class="mt-6" id="search-results">
+        <!-- Search results will appear here -->
+    </div>
+</div>
+
+
 </div>
 
 <!-- New Collection Modal -->
@@ -88,18 +99,33 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    loadDashboardStats();
     loadCollections();
     setupEventListeners();
 });
+
+async function loadDashboardStats() {
+    try {
+        const response = await fetch('/admin/stats');
+        const stats = await response.json();
+        
+        document.getElementById('total-docs').textContent = stats.total_documents;
+        document.getElementById('total-collections').textContent = stats.total_collections;
+        document.getElementById('storage-used').textContent = `${stats.storage_used} MB`;
+    } catch (error) {
+        console.error('Error loading stats:', error);
+    }
+}
 
 async function loadCollections() {
     try {
         const response = await fetch('/admin/collections');
         const collections = await response.json();
         
+        // Update collections table
         const tableBody = document.getElementById('collections-table');
         tableBody.innerHTML = collections.map(collection => `
-             <tr>
+            <tr>
                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">${collection.name}</td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">${collection.document_count}</td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">${new Date(collection.last_updated).toLocaleDateString()}</td>
@@ -111,6 +137,17 @@ async function loadCollections() {
                 </td>
             </tr>
         `).join('');
+
+        // Update collection selector
+        const collectionSelect = document.getElementById('collection-select');
+        if (collectionSelect) {
+            collectionSelect.innerHTML = `
+                <option value="">All Collections</option>
+                ${collections.map(col => `
+                    <option value="${col.name}">${col.name} (${col.document_count} docs)</option>
+                `).join('')}
+            `;
+        }
     } catch (error) {
         console.error('Error loading collections:', error);
     }
@@ -121,7 +158,7 @@ function setupEventListeners() {
     const newCollectionBtn = document.getElementById('new-collection-btn');
     const modalCancel = document.getElementById('modal-cancel');
     const newCollectionForm = document.getElementById('new-collection-form');
-    const searchBtn = document.getElementById('search-btn');
+    const searchForm = document.getElementById('search-form');
 
     newCollectionBtn.addEventListener('click', () => {
         modal.classList.remove('hidden');
@@ -149,50 +186,129 @@ function setupEventListeners() {
         }
     });
 
-    searchBtn.addEventListener('click', async () => {
+    searchForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
         const query = document.getElementById('search-input').value;
+        const collection = document.getElementById('collection-select').value;
+        
         try {
             const response = await fetch('/admin/search', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ query })
+                body: JSON.stringify({ 
+                    query,
+                    collection: collection || null 
+                })
             });
-            const results = await response.json();
-            displaySearchResults(results);
+            const data = await response.json();
+            displaySearchResults(data.results || []);
         } catch (error) {
             console.error('Error searching:', error);
+            displaySearchError('Error performing search');
         }
     });
 }
 
 function displaySearchResults(results) {
     const resultsDiv = document.getElementById('search-results');
+    
+    if (!results || results.length === 0) {
+        resultsDiv.innerHTML = `
+            <div class="text-center py-4 text-gray-500 dark:text-gray-400">
+                No results found
+            </div>
+        `;
+        return;
+    }
+
     resultsDiv.innerHTML = results.map(result => `
-         <div class="mb-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+        <div class="mb-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600">
             <div class="text-sm text-gray-900 dark:text-white">${result.text}</div>
-            <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">Source: ${result.metadata.source}</div>
+            <div class="mt-2 flex items-center justify-between">
+                <div class="text-xs text-gray-500 dark:text-gray-400">
+                    ${result.metadata.url ? `
+                        <a href="${result.metadata.url}" target="_blank" 
+                           class="text-blue-500 hover:text-blue-600">
+                            ${result.metadata.title || result.metadata.url}
+                        </a>
+                    ` : 'Source not available'}
+                </div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">
+                    Collection: ${result.collection || 'Unknown'}
+                </div>
+            </div>
+            ${result.metadata.scraped_at ? `
+                <div class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                    Scraped: ${new Date(result.metadata.scraped_at).toLocaleString()}
+                </div>
+            ` : ''}
         </div>
     `).join('');
+}
+
+function displaySearchError(message) {
+    const resultsDiv = document.getElementById('search-results');
+    resultsDiv.innerHTML = `
+        <div class="text-center py-4 text-red-500 dark:text-red-400">
+            ${message}
+        </div>
+    `;
 }
 
 async function deleteCollection(name) {
     if (confirm(`Are you sure you want to delete collection "${name}"?`)) {
         try {
-            await fetch(`/admin/collections/${name}`, {
+            const response = await fetch(`/admin/collections/${name}`, {
                 method: 'DELETE'
             });
-            loadCollections();
+            const data = await response.json();
+            if (data.status === 'success') {
+                loadCollections();
+            } else {
+                alert(`Error deleting collection: ${data.message}`);
+            }
         } catch (error) {
             console.error('Error deleting collection:', error);
+            alert('Error deleting collection');
         }
     }
 }
 
-function viewCollection(name) {
-    // Implement collection viewing logic
-    console.log(`Viewing collection: ${name}`);
+async function viewCollection(name) {
+    try {
+        // Set the collection in the dropdown
+        const collectionSelect = document.getElementById('collection-select');
+        if (collectionSelect) {
+            collectionSelect.value = name;
+        }
+        
+        // Clear any existing search
+        document.getElementById('search-input').value = '';
+        
+        // Trigger a search with empty query to show all documents
+        const response = await fetch('/admin/search', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 
+                query: '',
+                collection: name
+            })
+        });
+        
+        const data = await response.json();
+        displaySearchResults(data.results || []);
+        
+        // Scroll to search results
+        document.getElementById('search-results').scrollIntoView({ behavior: 'smooth' });
+        
+    } catch (error) {
+        console.error('Error viewing collection:', error);
+        displaySearchError('Error viewing collection');
+    }
 }
 </script>
 {% endblock %}

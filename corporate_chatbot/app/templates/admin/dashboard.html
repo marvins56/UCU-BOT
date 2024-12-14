@@ -1,28 +1,59 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="bg-white shadow rounded-lg">
+<div class="bg-white dark:bg-gray-800 shadow rounded-lg">
     <div class="px-4 py-5 sm:p-6">
-        <h2 class="text-2xl font-bold mb-4">Dashboard Overview</h2>
+        <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Dashboard Overview</h2>
         
         <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            <div class="bg-white overflow-hidden shadow rounded-lg">
+            <!-- Total Documents Card -->
+            <div class="bg-white dark:bg-gray-700 overflow-hidden shadow rounded-lg transition-colors">
                 <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">Total Documents</dt>
-                    <dd class="mt-1 text-3xl font-semibold text-gray-900" id="total-docs">Loading...</dd>
+                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-300 truncate">
+                        Total Documents
+                    </dt>
+                    <dd class="mt-1 text-3xl font-semibold text-gray-900 dark:text-white" id="total-docs">
+                        Loading...
+                    </dd>
                 </div>
             </div>
 
-            <div class="bg-white overflow-hidden shadow rounded-lg">
+            <!-- Total Collections Card -->
+            <div class="bg-white dark:bg-gray-700 overflow-hidden shadow rounded-lg transition-colors">
                 <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">Total Collections</dt>
-                    <dd class="mt-1 text-3xl font-semibold text-gray-900" id="total-collections">Loading...</dd>
+                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-300 truncate">
+                        Total Collections
+                    </dt>
+                    <dd class="mt-1 text-3xl font-semibold text-gray-900 dark:text-white" id="total-collections">
+                        Loading...
+                    </dd>
                 </div>
             </div>
 
-            <div class="bg-white overflow-hidden shadow rounded-lg">
+            <!-- Storage Used Card -->
+            <div class="bg-white dark:bg-gray-700 overflow-hidden shadow rounded-lg transition-colors">
                 <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">Storage Used</dt>
-                    <dd class="mt-1 text-3xl font-semibold text-gray-900" id="storage-used">Loading...</dd>
+                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-300 truncate">
+                        Storage Used
+                    </dt>
+                    <dd class="mt-1 text-3xl font-semibold text-gray-900 dark:text-white" id="storage-used">
+                        Loading...
+                    </dd>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Error Message (hidden by default) -->
+        <div id="error-message" class="mt-4 hidden">
+            <div class="bg-red-50 dark:bg-red-900 border-l-4 border-red-400 p-4">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm text-red-700 dark:text-red-200" id="error-text"></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,14 +63,41 @@
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
     try {
+        // Show loading state
+        ['total-docs', 'total-collections', 'storage-used'].forEach(id => {
+            document.getElementById(id).innerHTML = `
+                <span class="inline-block animate-pulse">Loading...</span>
+            `;
+        });
+
         const response = await fetch('/admin/stats');
         const stats = await response.json();
         
+        // Update stats with animation
         document.getElementById('total-docs').textContent = stats.total_documents;
         document.getElementById('total-collections').textContent = stats.total_collections;
         document.getElementById('storage-used').textContent = `${stats.storage_used} MB`;
+
+        // Add hover effects
+        document.querySelectorAll('.rounded-lg').forEach(card => {
+            card.classList.add('hover:shadow-lg', 'transition-shadow', 'duration-300');
+        });
+
     } catch (error) {
         console.error('Error loading stats:', error);
+        
+        // Show error message
+        const errorDiv = document.getElementById('error-message');
+        const errorText = document.getElementById('error-text');
+        errorDiv.classList.remove('hidden');
+        errorText.textContent = 'Error loading dashboard statistics. Please try again later.';
+
+        // Update stats to show error state
+        ['total-docs', 'total-collections', 'storage-used'].forEach(id => {
+            document.getElementById(id).innerHTML = `
+                <span class="text-red-500 dark:text-red-400">Error</span>
+            `;
+        });
     }
 });
 </script>
