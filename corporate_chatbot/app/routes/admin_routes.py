@@ -17,6 +17,14 @@ controller = ChatbotController()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not session.get('logged_in'):
+            # Redirect to the admin login page if not logged in
+            return redirect(url_for('admin.login'))
+        return f(*args, **kwargs)
+    return decorated_function
 
 @admin.route('/admin/manage')
 @login_required
@@ -37,6 +45,12 @@ def scraper_page():
 @login_required
 def dashboard():
     return render_template('admin/dashboard.html')
+
+@admin.route('/admin/logout')
+def logout():
+    session['logged_in'] = False
+    session.clear()
+    return redirect(url_for('user.chat'))
 
 @admin.route('/admin/analytics')
 @login_required
@@ -241,14 +255,13 @@ def login():
     password = data.get('password')
     
     if check_credentials(username, password):
-        session['logged_in'] = True
+        session['logged_in'] = True  # Set login status
         return jsonify({'success': True})
     
     return jsonify({
         'success': False,
         'message': 'Invalid username or password'
     })
-
 # Add this decorator to routes that need protection
 def login_required(f):
     @wraps(f)
