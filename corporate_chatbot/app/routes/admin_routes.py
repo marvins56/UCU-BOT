@@ -5,7 +5,7 @@ import json
 import asyncio
 import logging
 from functools import wraps
-from corporate_chatbot.app.utils.auth import check_credentials
+from ..utils.auth import check_credentials
 
 from ..utils.web_scraper import WebScraper
 from ..utils.data_pipeline import DataManager
