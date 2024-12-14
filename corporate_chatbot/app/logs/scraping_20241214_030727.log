@@ -1315,3 +1315,25 @@
 2024-12-14 03:10:51,799 - INFO - Following link: https://cse-ucu.com/data-analytics-and-visualization/
 2024-12-14 03:10:51,802 - INFO - Scraping URL: https://cse-ucu.com/data-analytics-and-visualization/ at depth 2
 2024-12-14 03:10:51,803 - INFO - Loading content from https://cse-ucu.com/data-analytics-and-visualization/
+2024-12-14 03:10:54,015 - INFO - Found 85 raw links on https://cse-ucu.com/data-analytics-and-visualization/
+2024-12-14 03:10:54,020 - INFO - Processed 81 valid URLs
+2024-12-14 03:10:54,112 - INFO - Removed 71 unwanted elements
+2024-12-14 03:10:54,174 - INFO - Found content in article tag
+2024-12-14 03:10:54,182 - INFO - Extracted 1094 characters of content from https://cse-ucu.com/data-analytics-and-visualization/
+2024-12-14 03:10:54,190 - INFO - Following link: https://www.facebook.com/ucucomputeng01
+2024-12-14 03:10:54,194 - INFO - Skipping https://www.facebook.com/ucucomputeng01 - Different domain
+2024-12-14 03:10:54,198 - INFO - Following link: https://cse-ucu.com/advanced-excel-programming-cpsd114/
+2024-12-14 03:10:54,202 - INFO - Scraping URL: https://cse-ucu.com/advanced-excel-programming-cpsd114/ at depth 2
+2024-12-14 03:10:54,206 - INFO - Loading content from https://cse-ucu.com/advanced-excel-programming-cpsd114/
+2024-12-14 03:10:54,226 - ERROR - Error scraping https://cse-ucu.com/advanced-excel-programming-cpsd114/: cannot schedule new futures after shutdown
+2024-12-14 03:10:54,227 - INFO - Following link: https://wa.me/256708114300
+2024-12-14 03:10:54,229 - INFO - Skipping https://wa.me/256708114300 - Different domain
+2024-12-14 03:10:54,230 - INFO - Following link: https://www.linkedin.com/
+2024-12-14 03:10:54,233 - INFO - Skipping https://www.linkedin.com/ - Different domain
+2024-12-14 03:10:54,243 - INFO - Following link: https://cse-ucu.com/microcontroller-programming-embedded-systems/
+2024-12-14 03:10:54,246 - INFO - Scraping URL: https://cse-ucu.com/microcontroller-programming-embedded-systems/ at depth 2
+2024-12-14 03:10:54,251 - INFO - Loading content from https://cse-ucu.com/microcontroller-programming-embedded-systems/
+2024-12-14 03:10:54,274 - ERROR - Error scraping https://cse-ucu.com/microcontroller-programming-embedded-systems/: cannot schedule new futures after shutdown
+2024-12-14 03:10:54,278 - INFO - Following link: https://www.youtube.com/
+2024-12-14 03:10:54,285 - INFO - Skipping https://www.youtube.com/ - Different domain
+2024-12-14 03:10:54,323 - INFO - Following link: https://estudiar.vamtam.com/?s=sports
