@@ -1,45 +1,87 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-md w-full space-y-8">
-        <div>
-            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white">Admin Login</h2>
+<div class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-blue-900 py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern opacity-10 dark:opacity-20"></div>
+    
+    <div class="relative max-w-md w-full space-y-8 bg-white dark:bg-white/10 backdrop-blur-lg rounded-xl shadow-2xl border border-gray-200 dark:border-white/20 p-8">
+        <div class="text-center">
+            <div id="logo-container" class="mb-6 flex justify-center items-center">
+                <div class="w-16 h-16 bg-blue-500 dark:bg-blue-600 rounded-full animate-pulse flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">Admin Access</h2>
+            <p class="mt-2 text-sm text-gray-600 dark:text-blue-200 opacity-75">Secure System Login</p>
         </div>
-        <form class="mt-8 space-y-6" id="login-form">
-            <div class="rounded-md shadow-sm -space-y-px">
-                <div>
-                    <label for="username" class="sr-only">Username</label>
-                    <input id="username" name="username" type="text" required 
-                           class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm dark:bg-gray-700"
-                           placeholder="Username">
-                </div>
-                <div>
-                    <label for="password" class="sr-only">Password</label>
-                    <input id="password" name="password" type="password" required
-                           class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm dark:bg-gray-700"
-                           placeholder="Password">
+
+        <form id="login-form" class="space-y-6">
+            <div class="relative">
+                <input id="username" name="username" type="text" required 
+                    class="w-full px-4 py-3 bg-gray-100 dark:bg-white/10 backdrop-blur-md border border-gray-300 dark:border-white/20 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+                    placeholder="Username">
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                    <svg class="w-5 h-5 text-gray-400 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
                 </div>
             </div>
 
-            <div id="error-message" class="hidden text-red-500 dark:text-red-400 text-sm text-center"></div>
-
-            <div>
-                <button type="submit"
-                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                    Sign in
-                </button>
+            <div class="relative">
+                <input id="password" name="password" type="password" required
+                    class="w-full px-4 py-3 bg-gray-100 dark:bg-white/10 backdrop-blur-md border border-gray-300 dark:border-white/20 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+                    placeholder="Password">
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                    <svg class="w-5 h-5 text-gray-400 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                </div>
             </div>
+
+            <div id="error-message" class="hidden text-red-600 dark:text-red-300 text-sm text-center py-2 bg-red-100 dark:bg-red-900/30 rounded-lg"></div>
+
+            <button type="submit" 
+                class="w-full py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center space-x-2">
+                <span>Authenticate</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+            </button>
         </form>
     </div>
+
+    <!-- Background Particle Effect -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <div id="particle-container" class="w-full h-full opacity-30"></div>
+    </div>
 </div>
+
+<style>
+    .bg-grid-pattern {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+</style>
 
 <script>
 document.getElementById('login-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const errorDiv = document.getElementById('error-message');
+
+    // Reset error state
+    errorDiv.classList.add('hidden');
+    usernameInput.classList.remove('border-red-500');
+    passwordInput.classList.remove('border-red-500');
+
     const formData = {
-        username: document.getElementById('username').value,
-        password: document.getElementById('password').value
+        username: usernameInput.value,
+        password: passwordInput.value
     };
 
     try {
@@ -54,15 +96,78 @@ document.getElementById('login-form').addEventListener('submit', async function(
         const data = await response.json();
 
         if (data.success) {
-            window.location.href = '/admin/dashboard';
+            // Add success animation
+            document.body.innerHTML += `
+                <div id="success-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-blue-900/80 backdrop-blur-sm">
+                    <div class="text-center text-white">
+                        <div class="animate-ping w-24 h-24 bg-green-500 rounded-full mx-auto mb-4"></div>
+                        <h2 class="text-2xl font-bold">Authentication Successful</h2>
+                        <p class="mt-2">Redirecting to Dashboard...</p>
+                    </div>
+                </div>
+            `;
+            
+            setTimeout(() => {
+                window.location.href = '/admin/dashboard';
+            }, 1500);
         } else {
-            const errorDiv = document.getElementById('error-message');
-            errorDiv.textContent = data.message || 'Invalid credentials';
+            errorDiv.textContent = data.message || 'Authentication Failed';
             errorDiv.classList.remove('hidden');
+            
+            // Add shake animation to inputs
+            usernameInput.classList.add('border-red-500', 'animate-shake');
+            passwordInput.classList.add('border-red-500', 'animate-shake');
+            
+            setTimeout(() => {
+                usernameInput.classList.remove('animate-shake');
+                passwordInput.classList.remove('animate-shake');
+            }, 500);
         }
     } catch (error) {
         console.error('Error:', error);
+        errorDiv.textContent = 'Network Error. Please try again.';
+        errorDiv.classList.remove('hidden');
     }
 });
+
+// Optional: Add particle background effect
+function createParticles() {
+    const container = document.getElementById('particle-container');
+    const particleCount = 50;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('absolute', 'bg-white', 'opacity-20', 'rounded-full');
+        particle.style.width = `${Math.random() * 4}px`;
+        particle.style.height = particle.style.width;
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        particle.style.animationDuration = `${Math.random() * 10 + 5}s`;
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+        particle.style.animationName = 'float';
+        particle.style.position = 'absolute';
+        container.appendChild(particle);
+    }
+}
+
+createParticles();
 </script>
+
+<style>
+@keyframes float {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.2); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.animate-shake {
+    animation: shake 0.5s;
+}
+</style>
 {% endblock %}

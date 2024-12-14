@@ -50,7 +50,7 @@ def dashboard():
 def logout():
     session['logged_in'] = False
     session.clear()
-    return redirect(url_for('user.chat'))
+    return redirect(url_for('user.home'))
 
 @admin.route('/admin/analytics')
 @login_required
@@ -205,6 +205,10 @@ def upload_file():
         return jsonify({'error': 'No selected file'}), 400
         
     result = controller.process_incoming_content("document", file)
+    
+    if result.get('status') == 'error':
+        return jsonify(result), 500
+    
     return jsonify(result)
 
 

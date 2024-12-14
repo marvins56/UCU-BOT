@@ -87,10 +87,7 @@
 
 <script>
 // Dark mode toggle
-document.getElementById('theme-toggle').addEventListener('click', function() {
-    document.documentElement.classList.toggle('dark');
-    localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-});
+
 
 // Auto-expanding textarea
 const textarea = document.querySelector('textarea');
@@ -132,11 +129,19 @@ document.getElementById('chat-form').addEventListener('submit', function(e) {
     }
 });
 
-// Check for saved theme preference
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark');
-} else {
-    document.documentElement.classList.remove('dark');
-}
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Theme toggle handler
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                document.documentElement.classList.toggle('dark');
+                localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            });
+        }
 </script>
 {% endblock %}

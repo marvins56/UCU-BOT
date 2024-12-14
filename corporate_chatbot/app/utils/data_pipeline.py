@@ -157,7 +157,7 @@ class DataManager:
         except Exception as e:
             return {"status": "error", "message": str(e)}
 
-    def search(self, query: str, collection_name: str = None, k: int = 4) -> List[Dict]:
+    def search(self, query: str, collection_name: str = None, k: int = 10) -> List[Dict]:
         """Search in specific collection or across all collections"""
         try:
             results = []
