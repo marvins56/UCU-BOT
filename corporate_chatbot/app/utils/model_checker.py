@@ -40,17 +40,27 @@ def download_model(url: str, filename: str, models_dir: str):
     except Exception as e:
         logger.error(f"Error downloading model {filename}: {str(e)}")
         return False
-
 def check_and_download_models():
     # Get the absolute path to the models directory
     models_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'models')
 
     # Check if models exist
+    found_models = []
     missing_models = []
     for model_name, model_info in MODELS.items():
         filepath = os.path.join(models_dir, model_info['filename'])
-        if not os.path.exists(filepath):
+        if os.path.exists(filepath):
+            found_models.append((model_name, model_info))
+        else:
             missing_models.append((model_name, model_info))
+
+    # Log the found and missing models
+    logger.info("Found models:")
+    for model_name, model_info in found_models:
+        logger.info(f"- {model_name}")
+    logger.info("Missing models:")
+    for model_name, model_info in missing_models:
+        logger.info(f"- {model_name}")
 
     # If no models are missing, return True immediately
     if not missing_models:
