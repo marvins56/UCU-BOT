@@ -11,3 +11,10 @@ pydantic>=2.0
 sentence-transformers
 flask[async]
 flask-cors
+llama-cpp-python  # For local LLM support
+tqdm  # For download progress bars
+requests  # For downloading models
+numpy  # For array operations
+scikit-learn  # For similarity calculations
+markdown  # For text formatting
+typing-extensions  # For type hints
