@@ -43,7 +43,7 @@ def download_model(url: str, filename: str, models_dir: str):
 
 def check_and_download_models():
     # Get the absolute path to the models directory in the project root
-    models_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'models')
+    models_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'models')
 
     # Check if models exist
     missing_models = []
