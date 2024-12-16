@@ -1,31 +1,59 @@
 from langchain_community.llms import LlamaCpp
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
+from langchain.prompts import PromptTemplate
 import os
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 import logging
 
 logger = logging.getLogger(__name__)
 
 class ModelManager:
+    _instance = None
+    
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            # Initialize models here
+        return cls._instance
     MODELS = {
         "mistral": {
             "name": "Mistral 7B",
             "path": "./models/mistral-7b-instruct-v0.1.Q4_K_M.gguf",
             "context_length": 2048,
-            "memory_required": "4GB"
+            "memory_required": "4GB",
+            "model_kwargs": {
+                "temperature": 0.7,
+                "max_tokens": 2000,
+                "top_p": 0.95,
+                "top_k": 40,
+                "n_gpu_layers": 0,
+                "n_batch": 32,
+                "n_ctx": 2048,
+                "f16_kv": True,
+                "verbose": False,
+                "streaming": False,
+                "repeat_penalty": 1.1
+            }
         },
         "phi2": {
             "name": "Phi-2",
             "path": "./models/phi-2.Q4_K_M.gguf",
             "context_length": 2048,
-            "memory_required": "2.5GB"
-        },
-        "bloomz": {
-            "name": "BLOOMZ-560M",
-            "path": "./models/bloomz-560m.Q4_K_M.gguf",
-            "context_length": 1024,
-            "memory_required": "1GB"
+            "memory_required": "2.5GB",
+            "model_kwargs": {
+                "temperature": 0.7,
+                "max_tokens": 2000,
+                "top_p": 0.95,
+                "top_k": 40,
+                "n_gpu_layers": 0,
+                "n_batch": 32,
+                "n_ctx": 2048,
+                "f16_kv": True,
+                "verbose": False,
+                "streaming": False,
+                "repeat_penalty": 1.1
+            }
         }
     }
 
@@ -33,17 +61,27 @@ class ModelManager:
         self.current_model = None
         self.qa_chain = None
         self.memory = None
+        self.loaded_models = {}  # Cache for loaded models
+        self.vectorstore = None
         self._initialize_memory()
 
     def _initialize_memory(self):
-        """Initialize conversation memory"""
         self.memory = ConversationBufferMemory(
             memory_key="chat_history",
+            output_key="answer",
             return_messages=True
         )
 
+    def set_vectorstore(self, vectorstore):
+        """Set the vector store reference"""
+        self.vectorstore = vectorstore
+        logger.info("Vector store initialized in ModelManager")
+
     def _create_model(self, model_key: str) -> Optional[LlamaCpp]:
-        """Create and configure the selected model"""
+        if model_key in self.loaded_models:
+            logger.info(f"Using cached model: {model_key}")
+            return self.loaded_models[model_key]
+
         try:
             model_config = self.MODELS[model_key]
             
@@ -53,15 +91,11 @@ class ModelManager:
 
             model = LlamaCpp(
                 model_path=model_config["path"],
-                temperature=0.7,
-                max_tokens=2000,
-                n_ctx=model_config["context_length"],
-                top_p=0.95,
-                n_gpu_layers=0,  # CPU only
-                verbose=False
+                **model_config["model_kwargs"]
             )
             
-            logger.info(f"Successfully loaded model: {model_config['name']}")
+            self.loaded_models[model_key] = model
+            logger.info(f"Successfully loaded and cached model: {model_config['name']}")
             return model
 
         except Exception as e:
@@ -69,7 +103,6 @@ class ModelManager:
             return None
 
     def initialize_chain(self, model_key: str, retriever) -> bool:
-        """Initialize the QA chain with the selected model"""
         try:
             if model_key not in self.MODELS:
                 logger.error(f"Invalid model key: {model_key}")
@@ -79,12 +112,32 @@ class ModelManager:
             if not llm:
                 return False
 
+            prompt = PromptTemplate(
+                template="""Use the following information to answer the question. If you can't find the answer in the provided context, say that you don't have that specific information.
+
+Context: {context}
+
+Question: {question}
+
+Previous conversation for context:
+{chat_history}
+
+Answer: """,
+                input_variables=["context", "question", "chat_history"]
+            )
+
             self.qa_chain = ConversationalRetrievalChain.from_llm(
                 llm=llm,
                 retriever=retriever,
                 memory=self.memory,
                 return_source_documents=True,
-                verbose=False
+                chain_type="stuff",
+                get_chat_history=lambda h: h,
+                verbose=False,
+                combine_docs_chain_kwargs={
+                    "prompt": prompt,
+                    "document_variable_name": "context"
+                }
             )
 
             self.current_model = model_key
@@ -95,7 +148,6 @@ class ModelManager:
             return False
 
     def get_response(self, query: str) -> Dict:
-        """Get response from the current model"""
         try:
             if not self.qa_chain:
                 return {
@@ -103,13 +155,28 @@ class ModelManager:
                     'success': False
                 }
 
-            response = self.qa_chain({"question": query})
+            # Get relevant documents using MMR
+            relevant_docs = self.vectorstore.max_marginal_relevance_search(
+                query,
+                k=4,
+                fetch_k=20,
+                lambda_mult=0.7
+            )
+
+            # Get response from chain
+            response = self.qa_chain.invoke({
+                "question": query,
+                "chat_history": self.memory.chat_memory.messages if self.memory else []
+            })
+            
+            has_relevant_info = len(response.get('source_documents', [])) > 0
             
             return {
                 'answer': response['answer'],
-                'sources': [doc.metadata for doc in response['source_documents']],
+                'sources': [doc.metadata for doc in response['source_documents']] if has_relevant_info else [],
                 'model': self.MODELS[self.current_model]['name'],
-                'success': True
+                'success': True,
+                'has_context': has_relevant_info
             }
 
         except Exception as e:
@@ -120,9 +187,16 @@ class ModelManager:
             }
 
     def get_available_models(self) -> Dict:
-        """Get list of available models and their details"""
         return self.MODELS
 
     def clear_memory(self):
-        """Clear conversation memory"""
         self._initialize_memory()
+
+    def cleanup(self):
+        """Clean up resources"""
+        for model in self.loaded_models.values():
+            try:
+                model.cleanup()
+            except:
+                pass
+        self.loaded_models.clear()

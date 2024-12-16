@@ -8,15 +8,15 @@ logger = logging.getLogger(__name__)
 MODELS = {
     "mistral": {
         "url": "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/main/mistral-7b-instruct-v0.1.Q4_K_M.gguf",
-        "filename": "mistral-7b-instruct-v0.1.Q4_K_M.gguf"
+        "filename": "mistral-7b-instruct-v0.1.Q4_K_M.gguf"  # Matches exactly your file
     },
     "phi2": {
         "url": "https://huggingface.co/TheBloke/phi-2-GGUF/resolve/main/phi-2.Q4_K_M.gguf",
-        "filename": "phi-2.Q4_K_M.gguf"
+        "filename": "phi-2.Q4_K_M.gguf"  # Matches exactly your file
     },
     "bloomz": {
         "url": "https://huggingface.co/TheBloke/bloomz-560m-GGUF/resolve/main/bloomz-560m.Q4_K_M.gguf",
-        "filename": "bloomz-560m.Q4_K_M.gguf"
+        "filename": "bloomz-560m.Q4_K_M.gguf"  # Matches exactly your file
     }
 }
 
@@ -42,15 +42,22 @@ def download_model(url: str, filename: str, models_dir: str):
         return False
 
 def check_and_download_models():
-    models_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'models')
-    os.makedirs(models_dir, exist_ok=True)
+    # Get the absolute path to the models directory in the project root
+    models_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'models')
     
+    # Check if models exist
     missing_models = []
     for model_name, model_info in MODELS.items():
         filepath = os.path.join(models_dir, model_info['filename'])
         if not os.path.exists(filepath):
             missing_models.append((model_name, model_info))
     
+    # If no models are missing, return True immediately
+    if not missing_models:
+        print("All required models are already present.")
+        return True
+    
+    # Only download missing models if any
     if missing_models:
         print("\nMissing models detected. Starting download...")
         for model_name, model_info in missing_models:

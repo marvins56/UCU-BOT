@@ -1,6 +1,7 @@
 langchain
 chromadb
 openai
+waitress
 beautifulsoup4
 flask
 tenacity==8.2.2
