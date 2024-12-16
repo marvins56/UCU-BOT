@@ -25,7 +25,7 @@ def download_model(url: str, filename: str, models_dir: str):
     try:
         response = requests.get(url, stream=True)
         total_size = int(response.headers.get('content-length', 0))
-        
+
         with open(filepath, 'wb') as file, tqdm(
             desc=filename,
             total=total_size,
