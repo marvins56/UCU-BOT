@@ -1,314 +1,417 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="bg-white dark:bg-gray-800 shadow rounded-lg divide-y divide-gray-200 dark:divide-gray-700">
-    <!-- Header -->
-    <div class="px-4 py-5 sm:px-6">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Knowledge Base Management</h2>
+{% extends "base.html" %} {% block content %}
+<div
+  class="bg-white dark:bg-gray-800 shadow rounded-lg divide-y divide-gray-200 dark:divide-gray-700"
+>
+  <!-- Header -->
+  <div class="px-4 py-5 sm:px-6">
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+      Knowledge Base Management
+    </h2>
+  </div>
+
+  <!-- Collection Management -->
+  <div class="px-4 py-5 sm:p-6">
+    <div class="flex justify-between items-center mb-6">
+      <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+        Collections
+      </h3>
+      <button
+        type="button"
+        id="new-collection-btn"
+        class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+      >
+        New Collection
+      </button>
     </div>
 
-    <!-- Collection Management -->
-    <div class="px-4 py-5 sm:p-6">
-        <div class="flex justify-between items-center mb-6">
-            <h3 class="text-lg font-medium text-gray-900 dark:text-white">Collections</h3>
-            <button type="button" id="new-collection-btn" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors">
-                New Collection
-            </button>
-        </div>
-
-        <div class="mt-4">
-            <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                    <thead class="bg-gray-50 dark:bg-gray-700">
-                        <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Name</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Documents</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Last Updated</th>
-                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700" id="collections-table">
-                        <!-- Collections will be listed here -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <div class="mt-4">
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+          <thead class="bg-gray-50 dark:bg-gray-700">
+            <tr>
+              <th
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+              >
+                Name
+              </th>
+              <th
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+              >
+                Documents
+              </th>
+              <th
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+              >
+                Last Updated
+              </th>
+              <th
+                class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+              >
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700"
+            id="collections-table"
+          >
+            <!-- Collections will be listed here -->
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 
-   <!-- Search Section -->
-<div class="px-4 py-5 sm:p-6">
-    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Search Collections</h3>
+  <!-- Search Section -->
+  <div class="px-4 py-5 sm:p-6">
+    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">
+      Search Collections
+    </h3>
     <div class="max-w-xl">
-        <form id="search-form" class="space-y-4">
-            <!-- Collection Selector -->
-            <div class="flex items-center space-x-4">
-                <select id="collection-select" 
-                        class="block w-1/3 rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-blue-500 focus:border-blue-500">
-                    <option value="">All Collections</option>
-                </select>
-                
-                <div class="flex-1 flex rounded-md shadow-sm">
-                    <input type="text" 
-                           id="search-input" 
-                           class="focus:ring-blue-500 focus:border-blue-500 flex-1 block w-full rounded-md sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white" 
-                           placeholder="Search in collections...">
-                    <button type="submit" 
-                            class="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
-                        Search
-                    </button>
-                </div>
-            </div>
-        </form>
+      <form id="search-form" class="space-y-4">
+        <!-- Collection Selector -->
+        <div class="flex items-center space-x-4">
+          <select
+            id="collection-select"
+            class="block w-1/3 rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-blue-500 focus:border-blue-500"
+          >
+            <option value="">All Collections</option>
+          </select>
+
+          <div class="flex-1 flex rounded-md shadow-sm">
+            <input
+              type="text"
+              id="search-input"
+              class="focus:ring-blue-500 focus:border-blue-500 flex-1 block w-full rounded-md sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+              placeholder="Search in collections..."
+            />
+            <button
+              type="submit"
+              class="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
     <div class="mt-6" id="search-results">
-        <!-- Search results will appear here -->
+      <!-- Search results will appear here -->
     </div>
-</div>
-
-
+  </div>
 </div>
 
 <!-- New Collection Modal -->
-<div id="new-collection-modal" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden">
-    <div class="flex items-center justify-center min-h-screen">
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full mx-4">
-            <div class="px-4 py-5 sm:p-6">
-                <h3 class="text-lg font-medium text-gray-900 dark:text-white">Create New Collection</h3>
-                <form id="new-collection-form" class="mt-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Collection Name</label>
-                        <input type="text" 
-                               id="collection-name" 
-                               class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:text-white">
-                    </div>
-                    <div class="mt-4 flex justify-end">
-                        <button type="button" 
-                                id="modal-cancel" 
-                                class="mr-3 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-400 transition-colors">
-                            Cancel
-                        </button>
-                        <button type="submit" 
-                                class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">
-                            Create
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
+<div
+  id="new-collection-modal"
+  class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden"
+>
+  <div class="flex items-center justify-center min-h-screen">
+    <div
+      class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full mx-4"
+    >
+      <div class="px-4 py-5 sm:p-6">
+        <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+          Create New Collection
+        </h3>
+        <form id="new-collection-form" class="mt-4">
+          <div>
+            <label
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >Collection Name</label
+            >
+            <input
+              type="text"
+              id="collection-name"
+              class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:text-white"
+            />
+          </div>
+          <div class="mt-4 flex justify-end">
+            <button
+              type="button"
+              id="modal-cancel"
+              class="mr-3 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-400 transition-colors"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
+            >
+              Create
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener("DOMContentLoaded", function () {
     loadDashboardStats();
     loadCollections();
     setupEventListeners();
-});
+  });
 
-async function loadDashboardStats() {
+  async function loadDashboardStats() {
     try {
-        const response = await fetch('/admin/stats');
-        const stats = await response.json();
-        
-        document.getElementById('total-docs').textContent = stats.total_documents;
-        document.getElementById('total-collections').textContent = stats.total_collections;
-        document.getElementById('storage-used').textContent = `${stats.storage_used} MB`;
+      const response = await fetch("/admin/stats");
+      const stats = await response.json();
+
+      document.getElementById("total-docs").textContent = stats.total_documents;
+      document.getElementById("total-collections").textContent =
+        stats.total_collections;
+      document.getElementById(
+        "storage-used"
+      ).textContent = `${stats.storage_used} MB`;
     } catch (error) {
-        console.error('Error loading stats:', error);
+      console.error("Error loading stats:", error);
     }
-}
+  }
 
-async function loadCollections() {
+  async function loadCollections() {
     try {
-        const response = await fetch('/admin/collections');
-        const collections = await response.json();
-        
-        // Update collections table
-        const tableBody = document.getElementById('collections-table');
-        tableBody.innerHTML = collections.map(collection => `
+      const response = await fetch("/admin/collections");
+      const collections = await response.json();
+
+      // Update collections table
+      const tableBody = document.getElementById("collections-table");
+      tableBody.innerHTML = collections
+        .map(
+          (collection) => `
             <tr>
-                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">${collection.name}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">${collection.document_count}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">${new Date(collection.last_updated).toLocaleDateString()}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">${
+                  collection.name
+                }</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">${
+                  collection.document_count
+                }</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">${new Date(
+                  collection.last_updated
+                ).toLocaleDateString()}</td>
                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <button class="text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-300 mr-4 transition-colors" 
-                            onclick="viewCollection('${collection.name}')">View</button>
+                            onclick="viewCollection('${
+                              collection.name
+                            }')">View</button>
                     <button class="text-red-600 dark:text-red-400 hover:text-red-900 dark:hover:text-red-300 transition-colors" 
-                            onclick="deleteCollection('${collection.name}')">Delete</button>
+                            onclick="deleteCollection('${
+                              collection.name
+                            }')">Delete</button>
                 </td>
             </tr>
-        `).join('');
+        `
+        )
+        .join("");
 
-        // Update collection selector
-        const collectionSelect = document.getElementById('collection-select');
-        if (collectionSelect) {
-            collectionSelect.innerHTML = `
+      // Update collection selector
+      const collectionSelect = document.getElementById("collection-select");
+      if (collectionSelect) {
+        collectionSelect.innerHTML = `
                 <option value="">All Collections</option>
-                ${collections.map(col => `
+                ${collections
+                  .map(
+                    (col) => `
                     <option value="${col.name}">${col.name} (${col.document_count} docs)</option>
-                `).join('')}
+                `
+                  )
+                  .join("")}
             `;
-        }
+      }
     } catch (error) {
-        console.error('Error loading collections:', error);
+      console.error("Error loading collections:", error);
     }
-}
+  }
 
-function setupEventListeners() {
-    const modal = document.getElementById('new-collection-modal');
-    const newCollectionBtn = document.getElementById('new-collection-btn');
-    const modalCancel = document.getElementById('modal-cancel');
-    const newCollectionForm = document.getElementById('new-collection-form');
-    const searchForm = document.getElementById('search-form');
+  function setupEventListeners() {
+    const modal = document.getElementById("new-collection-modal");
+    const newCollectionBtn = document.getElementById("new-collection-btn");
+    const modalCancel = document.getElementById("modal-cancel");
+    const newCollectionForm = document.getElementById("new-collection-form");
+    const searchForm = document.getElementById("search-form");
 
-    newCollectionBtn.addEventListener('click', () => {
-        modal.classList.remove('hidden');
+    newCollectionBtn.addEventListener("click", () => {
+      modal.classList.remove("hidden");
     });
 
-    modalCancel.addEventListener('click', () => {
-        modal.classList.add('hidden');
+    modalCancel.addEventListener("click", () => {
+      modal.classList.add("hidden");
     });
 
-    newCollectionForm.addEventListener('submit', async (e) => {
+    newCollectionForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("collection-name").value;
+      try {
+        await fetch("/admin/collections", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name }),
+        });
+        modal.classList.add("hidden");
+        loadCollections();
+      } catch (error) {
+        console.error("Error creating collection:", error);
+      }
+    });
+
+    document
+      .getElementById("search-form")
+      .addEventListener("submit", async (e) => {
         e.preventDefault();
-        const name = document.getElementById('collection-name').value;
-        try {
-            await fetch('/admin/collections', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ name })
-            });
-            modal.classList.add('hidden');
-            loadCollections();
-        } catch (error) {
-            console.error('Error creating collection:', error);
-        }
-    });
+        const searchInput = document.getElementById("search-input");
+        const collectionSelect = document.getElementById("collection-select");
+        const query = searchInput.value.trim();
+        const collection = collectionSelect.value;
 
-    searchForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const query = document.getElementById('search-input').value;
-        const collection = document.getElementById('collection-select').value;
-        
-        try {
-            const response = await fetch('/admin/search', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ 
-                    query,
-                    collection: collection || null 
-                })
-            });
-            const data = await response.json();
-            displaySearchResults(data.results || []);
-        } catch (error) {
-            console.error('Error searching:', error);
-            displaySearchError('Error performing search');
-        }
-    });
-}
+        if (!query) return;
 
-function displaySearchResults(results) {
-    const resultsDiv = document.getElementById('search-results');
-    
+        try {
+          const response = await fetch("/admin/search", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              query,
+              collection: collection || null,
+              k: 10,
+            }),
+          });
+
+          const data = await response.json();
+
+          if (data.status === "success") {
+            displaySearchResults(data.results);
+          } else {
+            displaySearchError(data.message || "Error performing search");
+          }
+        } catch (error) {
+          console.error("Search error:", error);
+          displaySearchError("Error connecting to server");
+        }
+      });
+  }
+  function displaySearchResults(results) {
+    const resultsDiv = document.getElementById("search-results");
+
     if (!results || results.length === 0) {
-        resultsDiv.innerHTML = `
+      resultsDiv.innerHTML = `
             <div class="text-center py-4 text-gray-500 dark:text-gray-400">
                 No results found
             </div>
         `;
-        return;
+      return;
     }
 
-    resultsDiv.innerHTML = results.map(result => `
+    resultsDiv.innerHTML = results
+      .map(
+        (result) => `
         <div class="mb-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600">
-            <div class="text-sm text-gray-900 dark:text-white">${result.text}</div>
-            <div class="mt-2 flex items-center justify-between">
-                <div class="text-xs text-gray-500 dark:text-gray-400">
-                    ${result.metadata.url ? `
-                        <a href="${result.metadata.url}" target="_blank" 
-                           class="text-blue-500 hover:text-blue-600">
-                            ${result.metadata.title || result.metadata.url}
-                        </a>
-                    ` : 'Source not available'}
+            <div class="flex justify-between items-start mb-2">
+                <div class="text-sm text-gray-900 dark:text-white flex-grow">
+                    ${result.text}
                 </div>
-                <div class="text-xs text-gray-500 dark:text-gray-400">
-                    Collection: ${result.collection || 'Unknown'}
+                <div class="text-xs text-gray-500 dark:text-gray-400 ml-2">
+                    Score: ${(result.score * 100).toFixed(2)}%
                 </div>
             </div>
-            ${result.metadata.scraped_at ? `
-                <div class="mt-1 text-xs text-gray-500 dark:text-gray-400">
-                    Scraped: ${new Date(result.metadata.scraped_at).toLocaleString()}
+            <div class="mt-2 flex items-center justify-between text-xs">
+                <div class="text-gray-500 dark:text-gray-400">
+                    ${formatMetadata(result.metadata)}
                 </div>
-            ` : ''}
+                <div class="text-gray-500 dark:text-gray-400">
+                    Collection: ${result.collection || "Unknown"}
+                </div>
+            </div>
         </div>
-    `).join('');
-}
+    `
+      )
+      .join("");
+  }
+  function formatMetadata(metadata) {
+    if (!metadata) return "";
 
-function displaySearchError(message) {
-    const resultsDiv = document.getElementById('search-results');
+    const parts = [];
+    if (metadata.source) parts.push(`Source: ${metadata.source}`);
+    if (metadata.file_name) parts.push(`File: ${metadata.file_name}`);
+    if (metadata.url) {
+      parts.push(`<a href="${metadata.url}" target="_blank" 
+                      class="text-blue-500 hover:text-blue-600">
+                      ${metadata.title || "View Source"}
+                   </a>`);
+    }
+    if (metadata.scraped_at) {
+      parts.push(`Scraped: ${new Date(metadata.scraped_at).toLocaleString()}`);
+    }
+
+    return parts.join(" | ");
+  }
+
+  function displaySearchError(message) {
+    const resultsDiv = document.getElementById("search-results");
     resultsDiv.innerHTML = `
         <div class="text-center py-4 text-red-500 dark:text-red-400">
             ${message}
         </div>
     `;
-}
+  }
 
-async function deleteCollection(name) {
+  async function deleteCollection(name) {
     if (confirm(`Are you sure you want to delete collection "${name}"?`)) {
-        try {
-            const response = await fetch(`/admin/collections/${name}`, {
-                method: 'DELETE'
-            });
-            const data = await response.json();
-            if (data.status === 'success') {
-                loadCollections();
-            } else {
-                alert(`Error deleting collection: ${data.message}`);
-            }
-        } catch (error) {
-            console.error('Error deleting collection:', error);
-            alert('Error deleting collection');
-        }
-    }
-}
-
-async function viewCollection(name) {
-    try {
-        // Set the collection in the dropdown
-        const collectionSelect = document.getElementById('collection-select');
-        if (collectionSelect) {
-            collectionSelect.value = name;
-        }
-        
-        // Clear any existing search
-        document.getElementById('search-input').value = '';
-        
-        // Trigger a search with empty query to show all documents
-        const response = await fetch('/admin/search', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ 
-                query: '',
-                collection: name
-            })
+      try {
+        const response = await fetch(`/admin/collections/${name}`, {
+          method: "DELETE",
         });
-        
         const data = await response.json();
-        displaySearchResults(data.results || []);
-        
-        // Scroll to search results
-        document.getElementById('search-results').scrollIntoView({ behavior: 'smooth' });
-        
-    } catch (error) {
-        console.error('Error viewing collection:', error);
-        displaySearchError('Error viewing collection');
+        if (data.status === "success") {
+          loadCollections();
+        } else {
+          alert(`Error deleting collection: ${data.message}`);
+        }
+      } catch (error) {
+        console.error("Error deleting collection:", error);
+        alert("Error deleting collection");
+      }
     }
-}
+  }
+
+  async function viewCollection(name) {
+    try {
+      // Set the collection in the dropdown
+      const collectionSelect = document.getElementById("collection-select");
+      if (collectionSelect) {
+        collectionSelect.value = name;
+      }
+
+      // Clear any existing search
+      document.getElementById("search-input").value = "";
+
+      // Trigger a search with empty query to show all documents
+      const response = await fetch("/admin/search", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: "",
+          collection: name,
+        }),
+      });
+
+      const data = await response.json();
+      displaySearchResults(data.results || []);
+
+      // Scroll to search results
+      document
+        .getElementById("search-results")
+        .scrollIntoView({ behavior: "smooth" });
+    } catch (error) {
+      console.error("Error viewing collection:", error);
+      displaySearchError("Error viewing collection");
+    }
+  }
 </script>
 {% endblock %}

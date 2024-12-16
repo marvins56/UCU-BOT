@@ -175,18 +175,35 @@ def search():
     try:
         query = request.json.get('query')
         collection_name = request.json.get('collection')  # Optional collection name
+        k = request.json.get('k', 10)  # Number of results to return
         
         if not query:
             return jsonify({'error': 'No query provided'}), 400
 
-        results = data_manager.search(query, collection_name=collection_name)
+        # Use hybrid search for better results
+        results = data_manager.hybrid_search(
+            query=query, 
+            collection_name=collection_name,
+            k=k
+        )
         
-        logger.info(f"Search for '{query}' found {len(results)} results")
+        # Get context windows for results
+        enhanced_results = []
+        for result in results:
+            context_window = data_manager.get_context_window(result)
+            enhanced_results.append({
+                'text': context_window,
+                'metadata': result['metadata'],
+                'collection': result.get('collection', collection_name),
+                'score': result.get('score', 0)
+            })
+        
+        logger.info(f"Search for '{query}' found {len(enhanced_results)} results")
         
         return jsonify({
             'status': 'success',
-            'results': results,
-            'count': len(results)
+            'results': enhanced_results,
+            'count': len(enhanced_results)
         })
 
     except Exception as e:
@@ -195,6 +212,9 @@ def search():
             'status': 'error',
             'message': str(e)
         }), 500
+
+
+
 @admin.route('/admin/upload', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:

@@ -1,0 +1,369 @@
+2024-12-14 14:50:19,172 - INFO - Set base domain: jmc.ucu.ac.ug
+2024-12-14 14:50:19,194 - INFO - Scraping URL: https://jmc.ucu.ac.ug at depth 0
+2024-12-14 14:50:19,209 - INFO - Loading content from https://jmc.ucu.ac.ug
+2024-12-14 14:50:23,384 - INFO - Found 52 raw links on https://jmc.ucu.ac.ug
+2024-12-14 14:50:23,394 - INFO - Processed 49 valid URLs
+2024-12-14 14:50:23,490 - INFO - Removed 39 unwanted elements
+2024-12-14 14:50:23,551 - INFO - Found content in body tag
+2024-12-14 14:50:23,561 - INFO - Extracted 5155 characters of content from https://jmc.ucu.ac.ug
+2024-12-14 14:50:23,565 - INFO - Following link: https://jmc.ucu.ac.ug/partnerships/
+2024-12-14 14:50:23,569 - INFO - Scraping URL: https://jmc.ucu.ac.ug/partnerships/ at depth 1
+2024-12-14 14:50:23,574 - INFO - Loading content from https://jmc.ucu.ac.ug/partnerships/
+2024-12-14 14:50:24,603 - INFO - Found 36 raw links on https://jmc.ucu.ac.ug/partnerships/
+2024-12-14 14:50:24,610 - INFO - Processed 33 valid URLs
+2024-12-14 14:50:24,642 - INFO - Removed 34 unwanted elements
+2024-12-14 14:50:24,667 - INFO - Found content in body tag
+2024-12-14 14:50:24,673 - INFO - Extracted 750 characters of content from https://jmc.ucu.ac.ug/partnerships/
+2024-12-14 14:50:24,679 - INFO - Following link: https://facebook.com/UgandaChristianUinversity
+2024-12-14 14:50:24,692 - INFO - Skipping https://facebook.com/UgandaChristianUinversity - Different domain
+2024-12-14 14:50:24,696 - INFO - Following link: https://www.visiongroup.co.ug/
+2024-12-14 14:50:24,723 - INFO - Skipping https://www.visiongroup.co.ug/ - Different domain
+2024-12-14 14:50:24,734 - INFO - Following link: https://www.africaniij.org/
+2024-12-14 14:50:24,740 - INFO - Skipping https://www.africaniij.org/ - Different domain
+2024-12-14 14:50:24,742 - INFO - Following link: https://jmc.ucu.ac.ug/programmes/
+2024-12-14 14:50:24,744 - INFO - Scraping URL: https://jmc.ucu.ac.ug/programmes/ at depth 2
+2024-12-14 14:50:24,746 - INFO - Loading content from https://jmc.ucu.ac.ug/programmes/
+2024-12-14 14:50:25,712 - INFO - Found 32 raw links on https://jmc.ucu.ac.ug/programmes/
+2024-12-14 14:50:25,717 - INFO - Processed 29 valid URLs
+2024-12-14 14:50:25,781 - INFO - Removed 34 unwanted elements
+2024-12-14 14:50:25,832 - INFO - Found content in body tag
+2024-12-14 14:50:25,856 - INFO - Extracted 856 characters of content from https://jmc.ucu.ac.ug/programmes/
+2024-12-14 14:50:25,860 - INFO - Following link: https://facebook.com/UgandaChristianUinversity
+2024-12-14 14:50:25,863 - INFO - Skipping https://facebook.com/UgandaChristianUinversity - Different domain
+2024-12-14 14:50:25,873 - INFO - Following link: https://ug.linkedin.com/company/uganda-christian-university-mukono
+2024-12-14 14:50:25,875 - INFO - Skipping https://ug.linkedin.com/company/uganda-christian-university-mukono - Different domain
+2024-12-14 14:50:25,878 - INFO - Following link: https://jmc.ucu.ac.ug/master-of-arts-in-journalism-and-media-studies/
+2024-12-14 14:50:25,880 - INFO - Scraping URL: https://jmc.ucu.ac.ug/master-of-arts-in-journalism-and-media-studies/ at depth 3
+2024-12-14 14:50:25,883 - INFO - Loading content from https://jmc.ucu.ac.ug/master-of-arts-in-journalism-and-media-studies/
+2024-12-14 14:50:26,832 - INFO - Found 28 raw links on https://jmc.ucu.ac.ug/master-of-arts-in-journalism-and-media-studies/
+2024-12-14 14:50:26,838 - INFO - Processed 25 valid URLs
+2024-12-14 14:50:26,881 - INFO - Removed 34 unwanted elements
+2024-12-14 14:50:26,902 - INFO - Found content in body tag
+2024-12-14 14:50:26,908 - INFO - Extracted 5416 characters of content from https://jmc.ucu.ac.ug/master-of-arts-in-journalism-and-media-studies/
+2024-12-14 14:50:26,911 - INFO - Following link: https://www.youtube.com/@ugandachristianuniversity3612
+2024-12-14 14:50:26,912 - INFO - Skipping https://www.youtube.com/@ugandachristianuniversity3612 - Different domain
+2024-12-14 14:50:26,914 - INFO - Following link: https://apply.ucu.ac.ug
+2024-12-14 14:50:26,915 - INFO - Skipping https://apply.ucu.ac.ug - Different domain
+2024-12-14 14:50:26,920 - INFO - Following link: https://application.ucu.ac.ug
+2024-12-14 14:50:26,927 - INFO - Skipping https://application.ucu.ac.ug - Different domain
+2024-12-14 14:50:26,930 - INFO - Following link: https://instagram.com/ucuniversity_official/?hl=en
+2024-12-14 14:50:26,932 - INFO - Skipping https://instagram.com/ucuniversity_official/?hl=en - Different domain
+2024-12-14 14:50:26,933 - INFO - Following link: https://library.ucu.ac.ug
+2024-12-14 14:50:26,936 - INFO - Skipping https://library.ucu.ac.ug - Different domain
+2024-12-14 14:50:26,943 - INFO - Following link: https://twitter.com/ucuniversity
+2024-12-14 14:50:26,961 - INFO - Skipping https://twitter.com/ucuniversity - Different domain
+2024-12-14 14:50:26,963 - INFO - Following link: https://jmc.ucu.ac.ug/contact-us/
+2024-12-14 14:50:26,965 - INFO - Scraping URL: https://jmc.ucu.ac.ug/contact-us/ at depth 3
+2024-12-14 14:50:26,968 - INFO - Loading content from https://jmc.ucu.ac.ug/contact-us/
+2024-12-14 14:50:28,277 - INFO - Found 29 raw links on https://jmc.ucu.ac.ug/contact-us/
+2024-12-14 14:50:28,281 - INFO - Processed 24 valid URLs
+2024-12-14 14:50:28,314 - INFO - Removed 41 unwanted elements
+2024-12-14 14:50:28,332 - INFO - Found content in body tag
+2024-12-14 14:50:28,342 - INFO - Extracted 493 characters of content from https://jmc.ucu.ac.ug/contact-us/
+2024-12-14 14:50:28,346 - INFO - Following link: https://jmc.ucu.ac.ug/
+2024-12-14 14:50:28,353 - INFO - Scraping URL: https://jmc.ucu.ac.ug/ at depth 3
+2024-12-14 14:50:28,356 - INFO - Loading content from https://jmc.ucu.ac.ug/
+2024-12-14 14:50:29,662 - INFO - Found 52 raw links on https://jmc.ucu.ac.ug/
+2024-12-14 14:50:29,667 - INFO - Processed 49 valid URLs
+2024-12-14 14:50:29,738 - INFO - Removed 39 unwanted elements
+2024-12-14 14:50:29,791 - INFO - Found content in body tag
+2024-12-14 14:50:29,794 - INFO - Extracted 5155 characters of content from https://jmc.ucu.ac.ug/
+2024-12-14 14:50:29,796 - INFO - Following link: https://jmc.ucu.ac.ug/visiting-scholars/
+2024-12-14 14:50:29,810 - INFO - Scraping URL: https://jmc.ucu.ac.ug/visiting-scholars/ at depth 3
+2024-12-14 14:50:29,820 - INFO - Loading content from https://jmc.ucu.ac.ug/visiting-scholars/
+2024-12-14 14:50:30,962 - INFO - Found 41 raw links on https://jmc.ucu.ac.ug/visiting-scholars/
+2024-12-14 14:50:30,979 - INFO - Processed 31 valid URLs
+2024-12-14 14:50:31,015 - INFO - Removed 34 unwanted elements
+2024-12-14 14:50:31,036 - INFO - Found content in body tag
+2024-12-14 14:50:31,040 - INFO - Extracted 946 characters of content from https://jmc.ucu.ac.ug/visiting-scholars/
+2024-12-14 14:50:31,042 - INFO - Following link: https://jmc.ucu.ac.ug/internships/
+2024-12-14 14:50:31,043 - INFO - Scraping URL: https://jmc.ucu.ac.ug/internships/ at depth 3
+2024-12-14 14:50:31,054 - INFO - Loading content from https://jmc.ucu.ac.ug/internships/
+2024-12-14 14:50:31,934 - INFO - Found 27 raw links on https://jmc.ucu.ac.ug/internships/
+2024-12-14 14:50:31,938 - INFO - Processed 24 valid URLs
+2024-12-14 14:50:31,964 - INFO - Removed 33 unwanted elements
+2024-12-14 14:50:31,976 - INFO - Found content in body tag
+2024-12-14 14:50:31,988 - INFO - Extracted 1194 characters of content from https://jmc.ucu.ac.ug/internships/
+2024-12-14 14:50:31,994 - INFO - Following link: https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf
+2024-12-14 14:50:31,996 - INFO - Skipping https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf - Different domain
+2024-12-14 14:50:32,027 - INFO - Following link: https://jmc.ucu.ac.ug/academics/
+2024-12-14 14:50:32,030 - INFO - Scraping URL: https://jmc.ucu.ac.ug/academics/ at depth 3
+2024-12-14 14:50:32,032 - INFO - Loading content from https://jmc.ucu.ac.ug/academics/
+2024-12-14 14:50:33,044 - INFO - Found 27 raw links on https://jmc.ucu.ac.ug/academics/
+2024-12-14 14:50:33,061 - INFO - Processed 24 valid URLs
+2024-12-14 14:50:33,083 - INFO - Removed 33 unwanted elements
+2024-12-14 14:50:33,091 - INFO - Found content in body tag
+2024-12-14 14:50:33,095 - INFO - Extracted 188 characters of content from https://jmc.ucu.ac.ug/academics/
+2024-12-14 14:50:33,100 - INFO - Following link: https://jmc.ucu.ac.ug/programmes/?lang=esp
+2024-12-14 14:50:33,102 - INFO - Scraping URL: https://jmc.ucu.ac.ug/programmes/?lang=esp at depth 3
+2024-12-14 14:50:33,104 - INFO - Loading content from https://jmc.ucu.ac.ug/programmes/?lang=esp
+2024-12-14 14:50:34,110 - INFO - Found 32 raw links on https://jmc.ucu.ac.ug/programmes/?lang=esp
+2024-12-14 14:50:34,176 - INFO - Processed 29 valid URLs
+2024-12-14 14:50:34,255 - INFO - Removed 34 unwanted elements
+2024-12-14 14:50:34,296 - INFO - Found content in body tag
+2024-12-14 14:50:34,356 - INFO - Extracted 856 characters of content from https://jmc.ucu.ac.ug/programmes/?lang=esp
+2024-12-14 14:50:34,359 - INFO - Following link: https://jmc.ucu.ac.ug/message-from-the-dean/
+2024-12-14 14:50:34,367 - INFO - Scraping URL: https://jmc.ucu.ac.ug/message-from-the-dean/ at depth 3
+2024-12-14 14:50:34,406 - INFO - Loading content from https://jmc.ucu.ac.ug/message-from-the-dean/
+2024-12-14 14:50:35,488 - INFO - Found 28 raw links on https://jmc.ucu.ac.ug/message-from-the-dean/
+2024-12-14 14:50:35,492 - INFO - Processed 25 valid URLs
+2024-12-14 14:50:35,543 - INFO - Removed 34 unwanted elements
+2024-12-14 14:50:35,551 - INFO - Found content in body tag
+2024-12-14 14:50:35,571 - INFO - Extracted 1235 characters of content from https://jmc.ucu.ac.ug/message-from-the-dean/
+2024-12-14 14:50:35,574 - INFO - Following link: https://jmc.ucu.ac.ug/master-of-arts-in-strategic-communication/
+2024-12-14 14:50:35,576 - INFO - Scraping URL: https://jmc.ucu.ac.ug/master-of-arts-in-strategic-communication/ at depth 3
+2024-12-14 14:50:35,611 - INFO - Loading content from https://jmc.ucu.ac.ug/master-of-arts-in-strategic-communication/
+2024-12-14 14:50:36,842 - INFO - Found 28 raw links on https://jmc.ucu.ac.ug/master-of-arts-in-strategic-communication/
+2024-12-14 14:50:36,880 - INFO - Processed 25 valid URLs
+2024-12-14 14:50:36,909 - INFO - Removed 34 unwanted elements
+2024-12-14 14:50:36,940 - INFO - Found content in body tag
+2024-12-14 14:50:36,942 - INFO - Extracted 5009 characters of content from https://jmc.ucu.ac.ug/master-of-arts-in-strategic-communication/
+2024-12-14 14:50:36,944 - INFO - Following link: https://facebook.com/UgandaChristianUniversity
+2024-12-14 14:50:36,946 - INFO - Skipping https://facebook.com/UgandaChristianUniversity - Different domain
+2024-12-14 14:50:36,948 - INFO - Following link: https://jmc.ucu.ac.ug/bachelor-of-arts-in-journalism-and-mass-communication
+2024-12-14 14:50:36,951 - INFO - Scraping URL: https://jmc.ucu.ac.ug/bachelor-of-arts-in-journalism-and-mass-communication at depth 3
+2024-12-14 14:50:36,953 - INFO - Loading content from https://jmc.ucu.ac.ug/bachelor-of-arts-in-journalism-and-mass-communication
+2024-12-14 14:50:39,400 - INFO - Found 28 raw links on https://jmc.ucu.ac.ug/bachelor-of-arts-in-journalism-and-mass-communication
+2024-12-14 14:50:39,406 - INFO - Processed 25 valid URLs
+2024-12-14 14:50:39,451 - INFO - Removed 34 unwanted elements
+2024-12-14 14:50:39,467 - INFO - Found content in body tag
+2024-12-14 14:50:39,470 - INFO - Extracted 4276 characters of content from https://jmc.ucu.ac.ug/bachelor-of-arts-in-journalism-and-mass-communication
+2024-12-14 14:50:39,477 - INFO - Following link: https://ucu.ac.ug
+2024-12-14 14:50:39,489 - INFO - Skipping https://ucu.ac.ug - Different domain
+2024-12-14 14:50:39,503 - INFO - Following link: https://moodle.ucu.ac.ug
+2024-12-14 14:50:39,505 - INFO - Skipping https://moodle.ucu.ac.ug - Different domain
+2024-12-14 14:50:39,512 - INFO - Following link: https://jmc.ucu.ac.ug/research/
+2024-12-14 14:50:39,514 - INFO - Scraping URL: https://jmc.ucu.ac.ug/research/ at depth 3
+2024-12-14 14:50:39,518 - INFO - Loading content from https://jmc.ucu.ac.ug/research/
+2024-12-14 14:50:40,553 - INFO - Found 36 raw links on https://jmc.ucu.ac.ug/research/
+2024-12-14 14:50:40,557 - INFO - Processed 33 valid URLs
+2024-12-14 14:50:40,590 - INFO - Removed 34 unwanted elements
+2024-12-14 14:50:40,643 - INFO - Found content in body tag
+2024-12-14 14:50:40,650 - INFO - Extracted 1005 characters of content from https://jmc.ucu.ac.ug/research/
+2024-12-14 14:50:40,653 - INFO - Following link: https://jmc.ucu.ac.ug/diploma-in-journalism-and-multimedia-production
+2024-12-14 14:50:40,655 - INFO - Scraping URL: https://jmc.ucu.ac.ug/diploma-in-journalism-and-multimedia-production at depth 3
+2024-12-14 14:50:40,657 - INFO - Loading content from https://jmc.ucu.ac.ug/diploma-in-journalism-and-multimedia-production
+2024-12-14 14:50:42,232 - INFO - Found 28 raw links on https://jmc.ucu.ac.ug/diploma-in-journalism-and-multimedia-production
+2024-12-14 14:50:42,242 - INFO - Processed 25 valid URLs
+2024-12-14 14:50:42,292 - INFO - Removed 34 unwanted elements
+2024-12-14 14:50:42,311 - INFO - Found content in body tag
+2024-12-14 14:50:42,324 - INFO - Extracted 3994 characters of content from https://jmc.ucu.ac.ug/diploma-in-journalism-and-multimedia-production
+2024-12-14 14:50:42,329 - INFO - Following link: https://jmc.ucu.ac.ug/staff/
+2024-12-14 14:50:42,331 - INFO - Scraping URL: https://jmc.ucu.ac.ug/staff/ at depth 3
+2024-12-14 14:50:42,336 - INFO - Loading content from https://jmc.ucu.ac.ug/staff/
+2024-12-14 14:50:43,624 - INFO - Found 56 raw links on https://jmc.ucu.ac.ug/staff/
+2024-12-14 14:50:43,627 - INFO - Processed 34 valid URLs
+2024-12-14 14:50:43,691 - INFO - Removed 34 unwanted elements
+2024-12-14 14:50:43,733 - INFO - Found content in body tag
+2024-12-14 14:50:43,741 - INFO - Extracted 1783 characters of content from https://jmc.ucu.ac.ug/staff/
+2024-12-14 14:50:43,745 - INFO - Following link: https://jmc.ucu.ac.ug/about-us/
+2024-12-14 14:50:43,789 - INFO - Scraping URL: https://jmc.ucu.ac.ug/about-us/ at depth 3
+2024-12-14 14:50:43,802 - INFO - Loading content from https://jmc.ucu.ac.ug/about-us/
+2024-12-14 14:50:45,841 - INFO - Found 27 raw links on https://jmc.ucu.ac.ug/about-us/
+2024-12-14 14:50:45,854 - INFO - Processed 24 valid URLs
+2024-12-14 14:50:45,970 - INFO - Removed 34 unwanted elements
+2024-12-14 14:50:46,053 - INFO - Found content in body tag
+2024-12-14 14:50:46,063 - INFO - Extracted 2239 characters of content from https://jmc.ucu.ac.ug/about-us/
+2024-12-14 14:50:46,068 - INFO - Following link: https://alpha.ucu.ac.ug
+2024-12-14 14:50:46,081 - INFO - Skipping https://alpha.ucu.ac.ug - Different domain
+2024-12-14 14:50:46,102 - INFO - Following link: https://www.nla.no/en/
+2024-12-14 14:50:46,106 - INFO - Skipping https://www.nla.no/en/ - Different domain
+2024-12-14 14:50:46,135 - INFO - Following link: https://www.ucf.edu/
+2024-12-14 14:50:46,137 - INFO - Skipping https://www.ucf.edu/ - Different domain
+2024-12-14 14:50:46,142 - INFO - Following link: https://ukzn.ac.za/
+2024-12-14 14:50:46,147 - INFO - Skipping https://ukzn.ac.za/ - Different domain
+2024-12-14 14:50:46,150 - INFO - Following link: https://jmc.ucu.ac.ug/partnerships/?lang=esp
+2024-12-14 14:50:46,173 - INFO - Scraping URL: https://jmc.ucu.ac.ug/partnerships/?lang=esp at depth 2
+2024-12-14 14:50:46,185 - INFO - Loading content from https://jmc.ucu.ac.ug/partnerships/?lang=esp
+2024-12-14 14:50:48,781 - INFO - Found 36 raw links on https://jmc.ucu.ac.ug/partnerships/?lang=esp
+2024-12-14 14:50:49,071 - INFO - Processed 33 valid URLs
+2024-12-14 14:50:50,423 - INFO - Removed 34 unwanted elements
+2024-12-14 14:50:50,472 - INFO - Found content in body tag
+2024-12-14 14:50:50,875 - INFO - Extracted 750 characters of content from https://jmc.ucu.ac.ug/partnerships/?lang=esp
+2024-12-14 14:50:50,884 - INFO - Following link: https://facebook.com/UgandaChristianUinversity
+2024-12-14 14:50:50,888 - INFO - Skipping https://facebook.com/UgandaChristianUinversity - Different domain
+2024-12-14 14:50:51,015 - INFO - Following link: https://www.visiongroup.co.ug/
+2024-12-14 14:50:51,056 - INFO - Skipping https://www.visiongroup.co.ug/ - Different domain
+2024-12-14 14:50:51,061 - INFO - Following link: https://www.africaniij.org/
+2024-12-14 14:50:51,066 - INFO - Skipping https://www.africaniij.org/ - Different domain
+2024-12-14 14:50:51,203 - INFO - Following link: https://www.nla.no/en/
+2024-12-14 14:50:51,473 - INFO - Skipping https://www.nla.no/en/ - Different domain
+2024-12-14 14:50:51,585 - INFO - Following link: https://www.ucf.edu/
+2024-12-14 14:50:51,590 - INFO - Skipping https://www.ucf.edu/ - Different domain
+2024-12-14 14:50:51,943 - INFO - Following link: https://ukzn.ac.za/
+2024-12-14 14:50:52,373 - INFO - Skipping https://ukzn.ac.za/ - Different domain
+2024-12-14 14:50:52,384 - INFO - Following link: https://ug.linkedin.com/company/uganda-christian-university-mukono
+2024-12-14 14:50:52,389 - INFO - Skipping https://ug.linkedin.com/company/uganda-christian-university-mukono - Different domain
+2024-12-14 14:50:52,393 - INFO - Following link: https://www.youtube.com/@ugandachristianuniversity3612
+2024-12-14 14:50:52,401 - INFO - Skipping https://www.youtube.com/@ugandachristianuniversity3612 - Different domain
+2024-12-14 14:50:52,406 - INFO - Following link: https://application.ucu.ac.ug
+2024-12-14 14:50:52,415 - INFO - Skipping https://application.ucu.ac.ug - Different domain
+2024-12-14 14:50:52,733 - INFO - Following link: https://instagram.com/ucuniversity_official/?hl=en
+2024-12-14 14:50:52,742 - INFO - Skipping https://instagram.com/ucuniversity_official/?hl=en - Different domain
+2024-12-14 14:50:52,745 - INFO - Following link: https://library.ucu.ac.ug
+2024-12-14 14:50:52,753 - INFO - Skipping https://library.ucu.ac.ug - Different domain
+2024-12-14 14:50:52,755 - INFO - Following link: https://www.norad.no/en/front/
+2024-12-14 14:50:52,862 - INFO - Skipping https://www.norad.no/en/front/ - Different domain
+2024-12-14 14:50:53,062 - INFO - Following link: https://ur.ac.rw/
+2024-12-14 14:50:53,067 - INFO - Skipping https://ur.ac.rw/ - Different domain
+2024-12-14 14:50:53,215 - INFO - Following link: https://twitter.com/ucuniversity
+2024-12-14 14:50:53,366 - INFO - Skipping https://twitter.com/ucuniversity - Different domain
+2024-12-14 14:50:53,370 - INFO - Following link: https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf
+2024-12-14 14:50:53,401 - INFO - Skipping https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf - Different domain
+2024-12-14 14:50:53,412 - INFO - Following link: https://www.nationmedia.com/
+2024-12-14 14:50:53,689 - INFO - Skipping https://www.nationmedia.com/ - Different domain
+2024-12-14 14:50:53,702 - INFO - Following link: https://facebook.com/UgandaChristianUniversity
+2024-12-14 14:50:53,996 - INFO - Skipping https://facebook.com/UgandaChristianUniversity - Different domain
+2024-12-14 14:50:54,000 - INFO - Following link: https://ucu.ac.ug
+2024-12-14 14:50:54,122 - INFO - Skipping https://ucu.ac.ug - Different domain
+2024-12-14 14:50:54,128 - INFO - Following link: https://moodle.ucu.ac.ug
+2024-12-14 14:50:54,131 - INFO - Skipping https://moodle.ucu.ac.ug - Different domain
+2024-12-14 14:50:54,133 - INFO - Following link: https://nextmedia.co.ug/
+2024-12-14 14:50:54,136 - INFO - Skipping https://nextmedia.co.ug/ - Different domain
+2024-12-14 14:50:54,139 - INFO - Following link: https://alpha.ucu.ac.ug
+2024-12-14 14:50:54,141 - INFO - Skipping https://alpha.ucu.ac.ug - Different domain
+2024-12-14 14:50:54,144 - INFO - Following link: https://ug.linkedin.com/company/uganda-christian-university-mukono
+2024-12-14 14:50:54,318 - INFO - Skipping https://ug.linkedin.com/company/uganda-christian-university-mukono - Different domain
+2024-12-14 14:50:54,332 - INFO - Following link: https://www.youtube.com/@ugandachristianuniversity3612
+2024-12-14 14:50:54,502 - INFO - Skipping https://www.youtube.com/@ugandachristianuniversity3612 - Different domain
+2024-12-14 14:50:54,514 - INFO - Following link: https://application.ucu.ac.ug
+2024-12-14 14:50:54,524 - INFO - Skipping https://application.ucu.ac.ug - Different domain
+2024-12-14 14:50:54,530 - INFO - Following link: https://instagram.com/ucuniversity_official/?hl=en
+2024-12-14 14:50:54,744 - INFO - Skipping https://instagram.com/ucuniversity_official/?hl=en - Different domain
+2024-12-14 14:50:54,773 - INFO - Following link: https://library.ucu.ac.ug
+2024-12-14 14:50:54,781 - INFO - Skipping https://library.ucu.ac.ug - Different domain
+2024-12-14 14:50:54,785 - INFO - Following link: https://www.norad.no/en/front/
+2024-12-14 14:50:55,381 - INFO - Skipping https://www.norad.no/en/front/ - Different domain
+2024-12-14 14:50:55,503 - INFO - Following link: https://ur.ac.rw/
+2024-12-14 14:50:55,520 - INFO - Skipping https://ur.ac.rw/ - Different domain
+2024-12-14 14:50:55,538 - INFO - Following link: https://twitter.com/ucuniversity
+2024-12-14 14:50:55,543 - INFO - Skipping https://twitter.com/ucuniversity - Different domain
+2024-12-14 14:50:55,558 - INFO - Following link: https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf
+2024-12-14 14:50:55,566 - INFO - Skipping https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf - Different domain
+2024-12-14 14:50:55,571 - INFO - Following link: https://www.nationmedia.com/
+2024-12-14 14:50:55,575 - INFO - Skipping https://www.nationmedia.com/ - Different domain
+2024-12-14 14:50:55,584 - INFO - Following link: https://facebook.com/UgandaChristianUniversity
+2024-12-14 14:50:55,596 - INFO - Skipping https://facebook.com/UgandaChristianUniversity - Different domain
+2024-12-14 14:50:55,600 - INFO - Following link: https://ucu.ac.ug
+2024-12-14 14:50:56,162 - INFO - Skipping https://ucu.ac.ug - Different domain
+2024-12-14 14:50:56,168 - INFO - Following link: https://moodle.ucu.ac.ug
+2024-12-14 14:50:56,179 - INFO - Skipping https://moodle.ucu.ac.ug - Different domain
+2024-12-14 14:50:56,186 - INFO - Following link: https://nextmedia.co.ug/
+2024-12-14 14:50:56,194 - INFO - Skipping https://nextmedia.co.ug/ - Different domain
+2024-12-14 14:50:56,203 - INFO - Following link: https://alpha.ucu.ac.ug
+2024-12-14 14:50:56,516 - INFO - Skipping https://alpha.ucu.ac.ug - Different domain
+2024-12-14 14:50:56,623 - INFO - Following link: https://facebook.com/UgandaChristianUinversity
+2024-12-14 14:50:56,631 - INFO - Skipping https://facebook.com/UgandaChristianUinversity - Different domain
+2024-12-14 14:50:56,688 - INFO - Following link: https://www.visiongroup.co.ug/
+2024-12-14 14:50:56,693 - INFO - Skipping https://www.visiongroup.co.ug/ - Different domain
+2024-12-14 14:50:56,700 - INFO - Following link: https://www.africaniij.org/
+2024-12-14 14:50:56,703 - INFO - Skipping https://www.africaniij.org/ - Different domain
+2024-12-14 14:50:56,707 - INFO - Following link: https://www.nla.no/en/
+2024-12-14 14:50:57,044 - INFO - Skipping https://www.nla.no/en/ - Different domain
+2024-12-14 14:50:57,121 - INFO - Following link: https://jmc.ucu.ac.ug?lang=esp
+2024-12-14 14:50:57,214 - INFO - Scraping URL: https://jmc.ucu.ac.ug?lang=esp at depth 1
+2024-12-14 14:50:57,381 - INFO - Loading content from https://jmc.ucu.ac.ug?lang=esp
+2024-12-14 14:51:02,059 - INFO - Found 52 raw links on https://jmc.ucu.ac.ug?lang=esp
+2024-12-14 14:51:02,078 - INFO - Processed 49 valid URLs
+2024-12-14 14:51:02,378 - INFO - Removed 39 unwanted elements
+2024-12-14 14:51:02,537 - INFO - Found content in body tag
+2024-12-14 14:51:02,600 - INFO - Extracted 5155 characters of content from https://jmc.ucu.ac.ug?lang=esp
+2024-12-14 14:51:02,684 - INFO - Following link: https://facebook.com/UgandaChristianUinversity
+2024-12-14 14:51:02,742 - INFO - Skipping https://facebook.com/UgandaChristianUinversity - Different domain
+2024-12-14 14:51:02,745 - INFO - Following link: https://www.visiongroup.co.ug/
+2024-12-14 14:51:02,750 - INFO - Skipping https://www.visiongroup.co.ug/ - Different domain
+2024-12-14 14:51:02,753 - INFO - Following link: https://www.africaniij.org/
+2024-12-14 14:51:02,759 - INFO - Skipping https://www.africaniij.org/ - Different domain
+2024-12-14 14:51:02,762 - INFO - Following link: https://www.nla.no/en/
+2024-12-14 14:51:02,891 - INFO - Skipping https://www.nla.no/en/ - Different domain
+2024-12-14 14:51:02,894 - INFO - Following link: https://www.ucf.edu/
+2024-12-14 14:51:02,898 - INFO - Skipping https://www.ucf.edu/ - Different domain
+2024-12-14 14:51:02,910 - INFO - Following link: https://ukzn.ac.za/
+2024-12-14 14:51:02,913 - INFO - Skipping https://ukzn.ac.za/ - Different domain
+2024-12-14 14:51:02,916 - INFO - Following link: https://ug.linkedin.com/company/uganda-christian-university-mukono
+2024-12-14 14:51:02,969 - INFO - Skipping https://ug.linkedin.com/company/uganda-christian-university-mukono - Different domain
+2024-12-14 14:51:03,071 - INFO - Following link: https://standard.ucu.ac.ug/
+2024-12-14 14:51:03,176 - INFO - Skipping https://standard.ucu.ac.ug/ - Different domain
+2024-12-14 14:51:03,180 - INFO - Following link: https://jmc.ucu.ac.ug/2023/05/12/
+2024-12-14 14:51:03,186 - INFO - Scraping URL: https://jmc.ucu.ac.ug/2023/05/12/ at depth 2
+2024-12-14 14:51:03,318 - INFO - Loading content from https://jmc.ucu.ac.ug/2023/05/12/
+2024-12-14 14:51:04,728 - INFO - Found 44 raw links on https://jmc.ucu.ac.ug/2023/05/12/
+2024-12-14 14:51:04,944 - INFO - Processed 41 valid URLs
+2024-12-14 14:51:05,090 - INFO - Removed 33 unwanted elements
+2024-12-14 14:51:05,147 - INFO - Found content in body tag
+2024-12-14 14:51:05,153 - INFO - Extracted 1190 characters of content from https://jmc.ucu.ac.ug/2023/05/12/
+2024-12-14 14:51:05,159 - INFO - Following link: https://facebook.com/UgandaChristianUinversity
+2024-12-14 14:51:05,231 - INFO - Skipping https://facebook.com/UgandaChristianUinversity - Different domain
+2024-12-14 14:51:05,336 - INFO - Following link: https://jmc.ucu.ac.ug/2016/06/
+2024-12-14 14:51:05,428 - INFO - Scraping URL: https://jmc.ucu.ac.ug/2016/06/ at depth 3
+2024-12-14 14:51:05,470 - INFO - Loading content from https://jmc.ucu.ac.ug/2016/06/
+2024-12-14 14:51:07,255 - INFO - Found 54 raw links on https://jmc.ucu.ac.ug/2016/06/
+2024-12-14 14:51:07,313 - INFO - Processed 51 valid URLs
+2024-12-14 14:51:07,380 - INFO - Removed 34 unwanted elements
+2024-12-14 14:51:07,415 - INFO - Found content in body tag
+2024-12-14 14:51:07,464 - INFO - Extracted 2145 characters of content from https://jmc.ucu.ac.ug/2016/06/
+2024-12-14 14:51:07,466 - INFO - Following link: https://jmc.ucu.ac.ug/category/diploma/
+2024-12-14 14:51:07,469 - INFO - Scraping URL: https://jmc.ucu.ac.ug/category/diploma/ at depth 3
+2024-12-14 14:51:07,472 - INFO - Loading content from https://jmc.ucu.ac.ug/category/diploma/
+2024-12-14 14:51:09,006 - INFO - Found 42 raw links on https://jmc.ucu.ac.ug/category/diploma/
+2024-12-14 14:51:09,033 - INFO - Processed 39 valid URLs
+2024-12-14 14:51:09,078 - INFO - Removed 33 unwanted elements
+2024-12-14 14:51:09,093 - INFO - Found content in body tag
+2024-12-14 14:51:09,096 - INFO - Extracted 658 characters of content from https://jmc.ucu.ac.ug/category/diploma/
+2024-12-14 14:51:09,098 - INFO - Following link: https://jmc.ucu.ac.ug/2023/05/
+2024-12-14 14:51:09,100 - INFO - Scraping URL: https://jmc.ucu.ac.ug/2023/05/ at depth 3
+2024-12-14 14:51:09,108 - INFO - Loading content from https://jmc.ucu.ac.ug/2023/05/
+2024-12-14 14:51:10,434 - INFO - Found 46 raw links on https://jmc.ucu.ac.ug/2023/05/
+2024-12-14 14:51:10,442 - INFO - Processed 43 valid URLs
+2024-12-14 14:51:10,472 - INFO - Removed 33 unwanted elements
+2024-12-14 14:51:10,495 - INFO - Found content in body tag
+2024-12-14 14:51:10,511 - INFO - Extracted 1769 characters of content from https://jmc.ucu.ac.ug/2023/05/
+2024-12-14 14:51:10,534 - INFO - Following link: https://ug.linkedin.com/company/uganda-christian-university-mukono
+2024-12-14 14:51:10,539 - INFO - Skipping https://ug.linkedin.com/company/uganda-christian-university-mukono - Different domain
+2024-12-14 14:51:10,543 - INFO - Following link: https://jmc.ucu.ac.ug/a-global-mba-for-the-next-generation-of-business-leaders/
+2024-12-14 14:51:10,599 - INFO - Scraping URL: https://jmc.ucu.ac.ug/a-global-mba-for-the-next-generation-of-business-leaders/ at depth 3
+2024-12-14 14:51:10,601 - INFO - Loading content from https://jmc.ucu.ac.ug/a-global-mba-for-the-next-generation-of-business-leaders/
+2024-12-14 14:51:11,894 - INFO - Found 41 raw links on https://jmc.ucu.ac.ug/a-global-mba-for-the-next-generation-of-business-leaders/
+2024-12-14 14:51:11,903 - INFO - Processed 38 valid URLs
+2024-12-14 14:51:11,949 - INFO - Removed 35 unwanted elements
+2024-12-14 14:51:11,959 - INFO - Found content in body tag
+2024-12-14 14:51:11,961 - INFO - Extracted 4697 characters of content from https://jmc.ucu.ac.ug/a-global-mba-for-the-next-generation-of-business-leaders/
+2024-12-14 14:51:11,963 - INFO - Following link: https://jmc.ucu.ac.ug/category/masters/
+2024-12-14 14:51:11,964 - INFO - Scraping URL: https://jmc.ucu.ac.ug/category/masters/ at depth 3
+2024-12-14 14:51:11,966 - INFO - Loading content from https://jmc.ucu.ac.ug/category/masters/
+2024-12-14 14:51:12,946 - INFO - Found 42 raw links on https://jmc.ucu.ac.ug/category/masters/
+2024-12-14 14:51:12,955 - INFO - Processed 39 valid URLs
+2024-12-14 14:51:12,998 - INFO - Removed 33 unwanted elements
+2024-12-14 14:51:13,011 - INFO - Found content in body tag
+2024-12-14 14:51:13,013 - INFO - Extracted 658 characters of content from https://jmc.ucu.ac.ug/category/masters/
+2024-12-14 14:51:13,015 - INFO - Following link: https://www.youtube.com/@ugandachristianuniversity3612
+2024-12-14 14:51:13,019 - INFO - Skipping https://www.youtube.com/@ugandachristianuniversity3612 - Different domain
+2024-12-14 14:51:13,032 - INFO - Following link: https://jmc.ucu.ac.ug/feed/
+2024-12-14 14:51:13,033 - INFO - Scraping URL: https://jmc.ucu.ac.ug/feed/ at depth 3
+2024-12-14 14:51:13,038 - INFO - Loading content from https://jmc.ucu.ac.ug/feed/
+2024-12-14 14:51:13,963 - INFO - Found 0 raw links on https://jmc.ucu.ac.ug/feed/
+2024-12-14 14:51:13,968 - INFO - Processed 0 valid URLs
+2024-12-14 14:51:13,992 - INFO - Removed 0 unwanted elements
+2024-12-14 14:51:13,998 - INFO - No specific content area found, using full page content
+2024-12-14 14:51:14,002 - INFO - Extracted 7391 characters of content from https://jmc.ucu.ac.ug/feed/
+2024-12-14 14:51:14,016 - INFO - Following link: https://jmc.ucu.ac.ug/comments/feed/
+2024-12-14 14:51:14,031 - INFO - Scraping URL: https://jmc.ucu.ac.ug/comments/feed/ at depth 3
+2024-12-14 14:51:14,033 - INFO - Loading content from https://jmc.ucu.ac.ug/comments/feed/
+2024-12-14 14:51:14,661 - INFO - Found 0 raw links on https://jmc.ucu.ac.ug/comments/feed/
+2024-12-14 14:51:14,719 - INFO - Processed 0 valid URLs
+2024-12-14 14:51:14,766 - INFO - Removed 0 unwanted elements
+2024-12-14 14:51:14,772 - INFO - No specific content area found, using full page content
+2024-12-14 14:51:14,774 - INFO - Extracted 152 characters of content from https://jmc.ucu.ac.ug/comments/feed/
+2024-12-14 14:51:14,777 - INFO - Following link: https://jmc.ucu.ac.ug/2023/05/12/?lang=esp
+2024-12-14 14:51:14,822 - INFO - Scraping URL: https://jmc.ucu.ac.ug/2023/05/12/?lang=esp at depth 3
+2024-12-14 14:51:14,824 - INFO - Loading content from https://jmc.ucu.ac.ug/2023/05/12/?lang=esp
+2024-12-14 14:51:15,605 - INFO - Found 44 raw links on https://jmc.ucu.ac.ug/2023/05/12/?lang=esp
+2024-12-14 14:51:15,623 - INFO - Processed 41 valid URLs
+2024-12-14 14:51:15,684 - INFO - Removed 33 unwanted elements
+2024-12-14 14:51:15,699 - INFO - Found content in body tag
+2024-12-14 14:51:15,702 - INFO - Extracted 1190 characters of content from https://jmc.ucu.ac.ug/2023/05/12/?lang=esp
+2024-12-14 14:51:15,704 - INFO - Following link: https://application.ucu.ac.ug
+2024-12-14 14:51:15,706 - INFO - Skipping https://application.ucu.ac.ug - Different domain
+2024-12-14 14:51:15,712 - INFO - Following link: https://jmc.ucu.ac.ug/ucu-partners-with-africa-institute-of-investigative-journalism/
+2024-12-14 14:51:15,728 - INFO - Scraping URL: https://jmc.ucu.ac.ug/ucu-partners-with-africa-institute-of-investigative-journalism/ at depth 3
+2024-12-14 14:51:15,731 - INFO - Loading content from https://jmc.ucu.ac.ug/ucu-partners-with-africa-institute-of-investigative-journalism/

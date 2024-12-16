@@ -1,0 +1,476 @@
+2024-12-14 14:57:15,188 - INFO - Set base domain: medicine.ucu.ac.ug
+2024-12-14 14:57:15,190 - INFO - Scraping URL: https://medicine.ucu.ac.ug/ at depth 0
+2024-12-14 14:57:15,192 - INFO - Loading content from https://medicine.ucu.ac.ug/
+2024-12-14 14:57:17,491 - INFO - Found 45 raw links on https://medicine.ucu.ac.ug/
+2024-12-14 14:57:17,504 - INFO - Processed 41 valid URLs
+2024-12-14 14:57:17,554 - INFO - Removed 37 unwanted elements
+2024-12-14 14:57:17,613 - INFO - Found content in body tag
+2024-12-14 14:57:17,624 - INFO - Extracted 4361 characters of content from https://medicine.ucu.ac.ug/
+2024-12-14 14:57:17,627 - INFO - Following link: https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/
+2024-12-14 14:57:17,634 - INFO - Scraping URL: https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/ at depth 1
+2024-12-14 14:57:17,691 - INFO - Loading content from https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/
+2024-12-14 14:57:19,670 - INFO - Found 37 raw links on https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/
+2024-12-14 14:57:19,673 - INFO - Processed 33 valid URLs
+2024-12-14 14:57:19,702 - INFO - Removed 36 unwanted elements
+2024-12-14 14:57:19,721 - INFO - Found content in article tag
+2024-12-14 14:57:19,723 - INFO - Extracted 4927 characters of content from https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/
+2024-12-14 14:57:19,725 - INFO - Following link: https://medicine.ucu.ac.ug/message-from-the-dean/
+2024-12-14 14:57:19,730 - INFO - Scraping URL: https://medicine.ucu.ac.ug/message-from-the-dean/ at depth 2
+2024-12-14 14:57:19,733 - INFO - Loading content from https://medicine.ucu.ac.ug/message-from-the-dean/
+2024-12-14 14:57:20,601 - INFO - Found 26 raw links on https://medicine.ucu.ac.ug/message-from-the-dean/
+2024-12-14 14:57:20,604 - INFO - Processed 22 valid URLs
+2024-12-14 14:57:20,634 - INFO - Removed 32 unwanted elements
+2024-12-14 14:57:20,644 - INFO - Found content in body tag
+2024-12-14 14:57:20,650 - INFO - Extracted 912 characters of content from https://medicine.ucu.ac.ug/message-from-the-dean/
+2024-12-14 14:57:20,658 - INFO - Following link: https://twitter.com/intent/tweet?text=Medicine+and+music%3A+UCU+student+from+Nigeria+seeks+nexus&url=https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/
+2024-12-14 14:57:20,673 - INFO - Skipping https://twitter.com/intent/tweet?text=Medicine+and+music%3A+UCU+student+from+Nigeria+seeks+nexus&url=https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/ - Different domain
+2024-12-14 14:57:20,676 - INFO - Following link: https://instagram.com/ucuniversity_official/?hl=en
+2024-12-14 14:57:20,679 - INFO - Skipping https://instagram.com/ucuniversity_official/?hl=en - Different domain
+2024-12-14 14:57:20,686 - INFO - Following link: https://library.ucu.ac.ug
+2024-12-14 14:57:20,699 - INFO - Skipping https://library.ucu.ac.ug - Different domain
+2024-12-14 14:57:20,704 - INFO - Following link: http://www.linkedin.com/shareArticle?mini=true&url=https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/&title=Medicine+and+music%3A+UCU+student+from+Nigeria+seeks+nexus
+2024-12-14 14:57:20,725 - INFO - Skipping http://www.linkedin.com/shareArticle?mini=true&url=https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/&title=Medicine+and+music%3A+UCU+student+from+Nigeria+seeks+nexus - Different domain
+2024-12-14 14:57:20,727 - INFO - Following link: https://www.youtube.com/@ugandachristianuniversity3612
+2024-12-14 14:57:20,744 - INFO - Skipping https://www.youtube.com/@ugandachristianuniversity3612 - Different domain
+2024-12-14 14:57:20,757 - INFO - Following link: https://medicine.ucu.ac.ug/why/
+2024-12-14 14:57:20,758 - INFO - Scraping URL: https://medicine.ucu.ac.ug/why/ at depth 2
+2024-12-14 14:57:20,760 - INFO - Loading content from https://medicine.ucu.ac.ug/why/
+2024-12-14 14:57:21,682 - INFO - Found 25 raw links on https://medicine.ucu.ac.ug/why/
+2024-12-14 14:57:21,692 - INFO - Processed 21 valid URLs
+2024-12-14 14:57:21,737 - INFO - Removed 32 unwanted elements
+2024-12-14 14:57:21,745 - INFO - Found content in body tag
+2024-12-14 14:57:21,750 - INFO - Extracted 2305 characters of content from https://medicine.ucu.ac.ug/why/
+2024-12-14 14:57:21,766 - INFO - Following link: https://ug.linkedin.com/company/uganda-christian-university-mukono
+2024-12-14 14:57:21,771 - INFO - Skipping https://ug.linkedin.com/company/uganda-christian-university-mukono - Different domain
+2024-12-14 14:57:21,774 - INFO - Following link: https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/#respond
+2024-12-14 14:57:21,776 - INFO - Scraping URL: https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/#respond at depth 2
+2024-12-14 14:57:21,779 - INFO - Loading content from https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/#respond
+2024-12-14 14:57:22,781 - INFO - Found 37 raw links on https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/#respond
+2024-12-14 14:57:22,786 - INFO - Processed 33 valid URLs
+2024-12-14 14:57:22,835 - INFO - Removed 36 unwanted elements
+2024-12-14 14:57:22,854 - INFO - Found content in article tag
+2024-12-14 14:57:22,857 - INFO - Extracted 4927 characters of content from https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/#respond
+2024-12-14 14:57:22,858 - INFO - Following link: https://ucu.ac.ug
+2024-12-14 14:57:22,869 - INFO - Skipping https://ucu.ac.ug - Different domain
+2024-12-14 14:57:22,870 - INFO - Following link: https://medicine.ucu.ac.ug/contact-us/
+2024-12-14 14:57:22,874 - INFO - Scraping URL: https://medicine.ucu.ac.ug/contact-us/ at depth 2
+2024-12-14 14:57:22,890 - INFO - Loading content from https://medicine.ucu.ac.ug/contact-us/
+2024-12-14 14:57:24,179 - INFO - Found 26 raw links on https://medicine.ucu.ac.ug/contact-us/
+2024-12-14 14:57:24,182 - INFO - Processed 21 valid URLs
+2024-12-14 14:57:24,239 - INFO - Removed 41 unwanted elements
+2024-12-14 14:57:24,251 - INFO - Found content in body tag
+2024-12-14 14:57:24,254 - INFO - Extracted 428 characters of content from https://medicine.ucu.ac.ug/contact-us/
+2024-12-14 14:57:24,256 - INFO - Following link: https://medicine.ucu.ac.ug/staff-list/
+2024-12-14 14:57:24,263 - INFO - Scraping URL: https://medicine.ucu.ac.ug/staff-list/ at depth 2
+2024-12-14 14:57:24,324 - INFO - Loading content from https://medicine.ucu.ac.ug/staff-list/
+2024-12-14 14:57:25,179 - INFO - Found 54 raw links on https://medicine.ucu.ac.ug/staff-list/
+2024-12-14 14:57:25,194 - INFO - Processed 30 valid URLs
+2024-12-14 14:57:25,238 - INFO - Removed 32 unwanted elements
+2024-12-14 14:57:25,258 - INFO - Found content in body tag
+2024-12-14 14:57:25,261 - INFO - Extracted 1596 characters of content from https://medicine.ucu.ac.ug/staff-list/
+2024-12-14 14:57:25,263 - INFO - Following link: https://medicine.ucu.ac.ug/programmes/
+2024-12-14 14:57:25,265 - INFO - Scraping URL: https://medicine.ucu.ac.ug/programmes/ at depth 2
+2024-12-14 14:57:25,267 - INFO - Loading content from https://medicine.ucu.ac.ug/programmes/
+2024-12-14 14:57:26,306 - INFO - Found 32 raw links on https://medicine.ucu.ac.ug/programmes/
+2024-12-14 14:57:26,315 - INFO - Processed 28 valid URLs
+2024-12-14 14:57:26,362 - INFO - Removed 33 unwanted elements
+2024-12-14 14:57:26,385 - INFO - Found content in body tag
+2024-12-14 14:57:26,389 - INFO - Extracted 570 characters of content from https://medicine.ucu.ac.ug/programmes/
+2024-12-14 14:57:26,399 - INFO - Following link: https://medicine.ucu.ac.ug/partnerships/
+2024-12-14 14:57:26,400 - INFO - Scraping URL: https://medicine.ucu.ac.ug/partnerships/ at depth 2
+2024-12-14 14:57:26,402 - INFO - Loading content from https://medicine.ucu.ac.ug/partnerships/
+2024-12-14 14:57:27,414 - INFO - Found 29 raw links on https://medicine.ucu.ac.ug/partnerships/
+2024-12-14 14:57:27,417 - INFO - Processed 25 valid URLs
+2024-12-14 14:57:27,451 - INFO - Removed 33 unwanted elements
+2024-12-14 14:57:27,481 - INFO - Found content in body tag
+2024-12-14 14:57:27,493 - INFO - Extracted 205 characters of content from https://medicine.ucu.ac.ug/partnerships/
+2024-12-14 14:57:27,495 - INFO - Following link: https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/?lang=esp
+2024-12-14 14:57:27,499 - INFO - Scraping URL: https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/?lang=esp at depth 2
+2024-12-14 14:57:27,506 - INFO - Loading content from https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/?lang=esp
+2024-12-14 14:57:28,654 - INFO - Found 37 raw links on https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/?lang=esp
+2024-12-14 14:57:28,657 - INFO - Processed 33 valid URLs
+2024-12-14 14:57:28,828 - INFO - Removed 36 unwanted elements
+2024-12-14 14:57:28,840 - INFO - Found content in article tag
+2024-12-14 14:57:28,844 - INFO - Extracted 4927 characters of content from https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/?lang=esp
+2024-12-14 14:57:28,883 - INFO - Following link: https://apply.ucu.ac.ug
+2024-12-14 14:57:28,896 - INFO - Skipping https://apply.ucu.ac.ug - Different domain
+2024-12-14 14:57:28,898 - INFO - Following link: https://medicine.ucu.ac.ug/nalwanga-ugandas-first-female-neurosurgeon/
+2024-12-14 14:57:28,905 - INFO - Scraping URL: https://medicine.ucu.ac.ug/nalwanga-ugandas-first-female-neurosurgeon/ at depth 2
+2024-12-14 14:57:28,911 - INFO - Loading content from https://medicine.ucu.ac.ug/nalwanga-ugandas-first-female-neurosurgeon/
+2024-12-14 14:57:29,963 - INFO - Found 36 raw links on https://medicine.ucu.ac.ug/nalwanga-ugandas-first-female-neurosurgeon/
+2024-12-14 14:57:29,969 - INFO - Processed 32 valid URLs
+2024-12-14 14:57:30,025 - INFO - Removed 36 unwanted elements
+2024-12-14 14:57:30,034 - INFO - Found content in article tag
+2024-12-14 14:57:30,045 - INFO - Extracted 3984 characters of content from https://medicine.ucu.ac.ug/nalwanga-ugandas-first-female-neurosurgeon/
+2024-12-14 14:57:30,051 - INFO - Following link: https://www.ugandapartners.org/2021/08/ucu-alumnus-called-to-the-nigerian-bar/
+2024-12-14 14:57:30,053 - INFO - Skipping https://www.ugandapartners.org/2021/08/ucu-alumnus-called-to-the-nigerian-bar/ - Different domain
+2024-12-14 14:57:30,055 - INFO - Following link: https://moodle.ucu.ac.ug
+2024-12-14 14:57:30,056 - INFO - Skipping https://moodle.ucu.ac.ug - Different domain
+2024-12-14 14:57:30,060 - INFO - Following link: https://alpha.ucu.ac.ug
+2024-12-14 14:57:30,063 - INFO - Skipping https://alpha.ucu.ac.ug - Different domain
+2024-12-14 14:57:30,064 - INFO - Following link: https://medicine.ucu.ac.ug/kingster-public-safety-survey-open-through-nov-30/
+2024-12-14 14:57:30,068 - INFO - Scraping URL: https://medicine.ucu.ac.ug/kingster-public-safety-survey-open-through-nov-30/ at depth 2
+2024-12-14 14:57:30,070 - INFO - Loading content from https://medicine.ucu.ac.ug/kingster-public-safety-survey-open-through-nov-30/
+2024-12-14 14:57:34,710 - INFO - Found 35 raw links on https://medicine.ucu.ac.ug/kingster-public-safety-survey-open-through-nov-30/
+2024-12-14 14:57:34,718 - INFO - Processed 31 valid URLs
+2024-12-14 14:57:34,758 - INFO - Removed 36 unwanted elements
+2024-12-14 14:57:34,785 - INFO - Found content in body tag
+2024-12-14 14:57:34,797 - INFO - Extracted 5160 characters of content from https://medicine.ucu.ac.ug/kingster-public-safety-survey-open-through-nov-30/
+2024-12-14 14:57:34,822 - INFO - Following link: https://medicine.ucu.ac.ug/author/jsiyasa/
+2024-12-14 14:57:34,830 - INFO - Scraping URL: https://medicine.ucu.ac.ug/author/jsiyasa/ at depth 2
+2024-12-14 14:57:34,834 - INFO - Loading content from https://medicine.ucu.ac.ug/author/jsiyasa/
+2024-12-14 14:57:36,315 - INFO - Found 38 raw links on https://medicine.ucu.ac.ug/author/jsiyasa/
+2024-12-14 14:57:36,328 - INFO - Processed 34 valid URLs
+2024-12-14 14:57:36,365 - INFO - Removed 32 unwanted elements
+2024-12-14 14:57:36,384 - INFO - Found content in body tag
+2024-12-14 14:57:36,395 - INFO - Extracted 1257 characters of content from https://medicine.ucu.ac.ug/author/jsiyasa/
+2024-12-14 14:57:36,398 - INFO - Following link: https://ucu.ac.ug/bachelor-of-medicine-bachelor-of-surgery-mbchb/
+2024-12-14 14:57:36,401 - INFO - Skipping https://ucu.ac.ug/bachelor-of-medicine-bachelor-of-surgery-mbchb/ - Different domain
+2024-12-14 14:57:36,403 - INFO - Following link: https://medicine.ucu.ac.ug/about-us/
+2024-12-14 14:57:36,405 - INFO - Scraping URL: https://medicine.ucu.ac.ug/about-us/ at depth 2
+2024-12-14 14:57:36,420 - INFO - Loading content from https://medicine.ucu.ac.ug/about-us/
+2024-12-14 14:57:37,352 - INFO - Found 25 raw links on https://medicine.ucu.ac.ug/about-us/
+2024-12-14 14:57:37,370 - INFO - Processed 21 valid URLs
+2024-12-14 14:57:37,433 - INFO - Removed 33 unwanted elements
+2024-12-14 14:57:37,447 - INFO - Found content in body tag
+2024-12-14 14:57:37,453 - INFO - Extracted 1254 characters of content from https://medicine.ucu.ac.ug/about-us/
+2024-12-14 14:57:37,455 - INFO - Following link: https://medicine.ucu.ac.ug/bachelor-of-medicine-bachelor-of-surgery/
+2024-12-14 14:57:37,462 - INFO - Scraping URL: https://medicine.ucu.ac.ug/bachelor-of-medicine-bachelor-of-surgery/ at depth 2
+2024-12-14 14:57:37,465 - INFO - Loading content from https://medicine.ucu.ac.ug/bachelor-of-medicine-bachelor-of-surgery/
+2024-12-14 14:57:38,312 - INFO - Found 25 raw links on https://medicine.ucu.ac.ug/bachelor-of-medicine-bachelor-of-surgery/
+2024-12-14 14:57:38,405 - INFO - Processed 21 valid URLs
+2024-12-14 14:57:38,534 - INFO - Removed 33 unwanted elements
+2024-12-14 14:57:38,582 - INFO - Found content in body tag
+2024-12-14 14:57:38,586 - INFO - Extracted 797 characters of content from https://medicine.ucu.ac.ug/bachelor-of-medicine-bachelor-of-surgery/
+2024-12-14 14:57:38,613 - INFO - Following link: https://elearning.ucu.ac.ug/bachelor-of-medicine-bachelor-of-surgery/
+2024-12-14 14:57:38,616 - INFO - Skipping https://elearning.ucu.ac.ug/bachelor-of-medicine-bachelor-of-surgery/ - Different domain
+2024-12-14 14:57:38,620 - INFO - Following link: https://twitter.com/ucuniversity
+2024-12-14 14:57:38,660 - INFO - Skipping https://twitter.com/ucuniversity - Different domain
+2024-12-14 14:57:38,677 - INFO - Following link: https://www.facebook.com/sharer/sharer.php?caption=Medicine+and+music%3A+UCU+student+from+Nigeria+seeks+nexus&u=https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/
+2024-12-14 14:57:38,723 - INFO - Skipping https://www.facebook.com/sharer/sharer.php?caption=Medicine+and+music%3A+UCU+student+from+Nigeria+seeks+nexus&u=https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/ - Different domain
+2024-12-14 14:57:38,726 - INFO - Following link: http://pinterest.com/pin/create/button/?url=https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/&media=https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Chizaram-1-e1686046429765.webp
+2024-12-14 14:57:38,733 - INFO - Skipping http://pinterest.com/pin/create/button/?url=https://medicine.ucu.ac.ug/medicine-and-music-ucu-student-from-nigeria-seeks-nexus/&media=https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Chizaram-1-e1686046429765.webp - Different domain
+2024-12-14 14:57:38,753 - INFO - Following link: https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf
+2024-12-14 14:57:38,755 - INFO - Skipping https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf - Different domain
+2024-12-14 14:57:38,767 - INFO - Following link: https://facebook.com/UgandaChristianUinversity
+2024-12-14 14:57:38,771 - INFO - Skipping https://facebook.com/UgandaChristianUinversity - Different domain
+2024-12-14 14:57:38,777 - INFO - Following link: https://en.wikipedia.org/wiki/Contemporary_Christian_music
+2024-12-14 14:57:38,835 - INFO - Skipping https://en.wikipedia.org/wiki/Contemporary_Christian_music - Different domain
+2024-12-14 14:57:38,837 - INFO - Following link: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1462-scaled.webp
+2024-12-14 14:57:38,866 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1462-scaled.webp at depth 1
+2024-12-14 14:57:38,872 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1462-scaled.webp
+2024-12-14 14:57:39,771 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1462-scaled.webp
+2024-12-14 14:57:39,772 - INFO - Processed 0 valid URLs
+2024-12-14 14:57:39,774 - INFO - Removed 0 unwanted elements
+2024-12-14 14:57:39,775 - INFO - No specific content area found, using full page content
+2024-12-14 14:57:39,776 - INFO - Extracted 0 characters of content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1462-scaled.webp
+2024-12-14 14:57:39,778 - INFO - Following link: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Red-Cross-e1686055360479.jpeg
+2024-12-14 14:57:39,779 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Red-Cross-e1686055360479.jpeg at depth 1
+2024-12-14 14:57:39,781 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Red-Cross-e1686055360479.jpeg
+2024-12-14 14:57:40,201 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Red-Cross-e1686055360479.jpeg
+2024-12-14 14:57:40,202 - INFO - Processed 0 valid URLs
+2024-12-14 14:57:40,203 - INFO - Removed 0 unwanted elements
+2024-12-14 14:57:40,205 - INFO - No specific content area found, using full page content
+2024-12-14 14:57:40,212 - INFO - Extracted 0 characters of content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Red-Cross-e1686055360479.jpeg
+2024-12-14 14:57:40,213 - INFO - Following link: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1545-scaled.webp
+2024-12-14 14:57:40,215 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1545-scaled.webp at depth 1
+2024-12-14 14:57:40,216 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1545-scaled.webp
+2024-12-14 14:57:40,994 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1545-scaled.webp
+2024-12-14 14:57:40,995 - INFO - Processed 0 valid URLs
+2024-12-14 14:57:40,997 - INFO - Removed 0 unwanted elements
+2024-12-14 14:57:40,998 - INFO - No specific content area found, using full page content
+2024-12-14 14:57:41,000 - INFO - Extracted 0 characters of content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1545-scaled.webp
+2024-12-14 14:57:41,002 - INFO - Following link: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Mengo-Hospital-e1686045567288.png
+2024-12-14 14:57:41,003 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Mengo-Hospital-e1686045567288.png at depth 1
+2024-12-14 14:57:41,005 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Mengo-Hospital-e1686045567288.png
+2024-12-14 14:57:41,333 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Mengo-Hospital-e1686045567288.png
+2024-12-14 14:57:41,334 - INFO - Processed 0 valid URLs
+2024-12-14 14:57:41,336 - INFO - Removed 0 unwanted elements
+2024-12-14 14:57:41,341 - INFO - No specific content area found, using full page content
+2024-12-14 14:57:41,342 - INFO - Extracted 0 characters of content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Mengo-Hospital-e1686045567288.png
+2024-12-14 14:57:41,344 - INFO - Following link: https://instagram.com/ucuniversity_official/?hl=en
+2024-12-14 14:57:41,345 - INFO - Skipping https://instagram.com/ucuniversity_official/?hl=en - Different domain
+2024-12-14 14:57:41,346 - INFO - Following link: https://library.ucu.ac.ug
+2024-12-14 14:57:41,348 - INFO - Skipping https://library.ucu.ac.ug - Different domain
+2024-12-14 14:57:41,384 - INFO - Following link: https://medicine.ucu.ac.ug/about-us
+2024-12-14 14:57:41,387 - INFO - Scraping URL: https://medicine.ucu.ac.ug/about-us at depth 1
+2024-12-14 14:57:41,394 - INFO - Loading content from https://medicine.ucu.ac.ug/about-us
+2024-12-14 14:57:42,763 - INFO - Found 25 raw links on https://medicine.ucu.ac.ug/about-us
+2024-12-14 14:57:42,772 - INFO - Processed 21 valid URLs
+2024-12-14 14:57:42,808 - INFO - Removed 33 unwanted elements
+2024-12-14 14:57:42,850 - INFO - Found content in body tag
+2024-12-14 14:57:42,923 - INFO - Extracted 1254 characters of content from https://medicine.ucu.ac.ug/about-us
+2024-12-14 14:57:43,008 - INFO - Following link: https://instagram.com/ucuniversity_official/?hl=en
+2024-12-14 14:57:43,052 - INFO - Skipping https://instagram.com/ucuniversity_official/?hl=en - Different domain
+2024-12-14 14:57:43,083 - INFO - Following link: https://library.ucu.ac.ug
+2024-12-14 14:57:43,086 - INFO - Skipping https://library.ucu.ac.ug - Different domain
+2024-12-14 14:57:43,094 - INFO - Following link: https://www.youtube.com/@ugandachristianuniversity3612
+2024-12-14 14:57:43,102 - INFO - Skipping https://www.youtube.com/@ugandachristianuniversity3612 - Different domain
+2024-12-14 14:57:43,118 - INFO - Following link: https://ug.linkedin.com/company/uganda-christian-university-mukono
+2024-12-14 14:57:43,122 - INFO - Skipping https://ug.linkedin.com/company/uganda-christian-university-mukono - Different domain
+2024-12-14 14:57:43,124 - INFO - Following link: https://ucu.ac.ug
+2024-12-14 14:57:43,133 - INFO - Skipping https://ucu.ac.ug - Different domain
+2024-12-14 14:57:43,139 - INFO - Following link: https://apply.ucu.ac.ug
+2024-12-14 14:57:43,143 - INFO - Skipping https://apply.ucu.ac.ug - Different domain
+2024-12-14 14:57:43,145 - INFO - Following link: https://moodle.ucu.ac.ug
+2024-12-14 14:57:43,146 - INFO - Skipping https://moodle.ucu.ac.ug - Different domain
+2024-12-14 14:57:43,159 - INFO - Following link: https://alpha.ucu.ac.ug
+2024-12-14 14:57:43,162 - INFO - Skipping https://alpha.ucu.ac.ug - Different domain
+2024-12-14 14:57:43,179 - INFO - Following link: https://medicine.ucu.ac.ug/about-us?lang=esp
+2024-12-14 14:57:43,207 - INFO - Scraping URL: https://medicine.ucu.ac.ug/about-us?lang=esp at depth 2
+2024-12-14 14:57:43,210 - INFO - Loading content from https://medicine.ucu.ac.ug/about-us?lang=esp
+2024-12-14 14:57:44,759 - INFO - Found 25 raw links on https://medicine.ucu.ac.ug/about-us?lang=esp
+2024-12-14 14:57:44,767 - INFO - Processed 21 valid URLs
+2024-12-14 14:57:44,874 - INFO - Removed 33 unwanted elements
+2024-12-14 14:57:44,910 - INFO - Found content in body tag
+2024-12-14 14:57:44,934 - INFO - Extracted 1254 characters of content from https://medicine.ucu.ac.ug/about-us?lang=esp
+2024-12-14 14:57:44,948 - INFO - Following link: https://twitter.com/ucuniversity
+2024-12-14 14:57:44,952 - INFO - Skipping https://twitter.com/ucuniversity - Different domain
+2024-12-14 14:57:44,962 - INFO - Following link: https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf
+2024-12-14 14:57:44,976 - INFO - Skipping https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf - Different domain
+2024-12-14 14:57:44,983 - INFO - Following link: https://facebook.com/UgandaChristianUinversity
+2024-12-14 14:57:44,999 - INFO - Skipping https://facebook.com/UgandaChristianUinversity - Different domain
+2024-12-14 14:57:45,003 - INFO - Following link: https://www.youtube.com/@ugandachristianuniversity3612
+2024-12-14 14:57:45,005 - INFO - Skipping https://www.youtube.com/@ugandachristianuniversity3612 - Different domain
+2024-12-14 14:57:45,014 - INFO - Following link: https://ug.linkedin.com/company/uganda-christian-university-mukono
+2024-12-14 14:57:45,016 - INFO - Skipping https://ug.linkedin.com/company/uganda-christian-university-mukono - Different domain
+2024-12-14 14:57:45,040 - INFO - Following link: https://ucu.ac.ug
+2024-12-14 14:57:45,042 - INFO - Skipping https://ucu.ac.ug - Different domain
+2024-12-14 14:57:45,045 - INFO - Following link: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1539-scaled.webp
+2024-12-14 14:57:45,047 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1539-scaled.webp at depth 1
+2024-12-14 14:57:45,051 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1539-scaled.webp
+2024-12-14 14:57:45,819 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1539-scaled.webp
+2024-12-14 14:57:45,821 - INFO - Processed 0 valid URLs
+2024-12-14 14:57:45,822 - INFO - Removed 0 unwanted elements
+2024-12-14 14:57:45,834 - INFO - No specific content area found, using full page content
+2024-12-14 14:57:45,837 - INFO - Extracted 0 characters of content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1539-scaled.webp
+2024-12-14 14:57:45,850 - INFO - Following link: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1490-scaled.webp
+2024-12-14 14:57:45,853 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1490-scaled.webp at depth 1
+2024-12-14 14:57:45,860 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1490-scaled.webp
+2024-12-14 14:57:46,536 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1490-scaled.webp
+2024-12-14 14:57:46,538 - INFO - Processed 0 valid URLs
+2024-12-14 14:57:46,541 - INFO - Removed 0 unwanted elements
+2024-12-14 14:57:46,543 - INFO - No specific content area found, using full page content
+2024-12-14 14:57:46,547 - INFO - Extracted 0 characters of content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1490-scaled.webp
+2024-12-14 14:57:46,548 - INFO - Following link: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1461-scaled.webp
+2024-12-14 14:57:46,550 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1461-scaled.webp at depth 1
+2024-12-14 14:57:46,555 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1461-scaled.webp
+2024-12-14 14:57:47,249 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1461-scaled.webp
+2024-12-14 14:57:47,252 - INFO - Processed 0 valid URLs
+2024-12-14 14:57:47,254 - INFO - Removed 0 unwanted elements
+2024-12-14 14:57:47,256 - INFO - No specific content area found, using full page content
+2024-12-14 14:57:47,258 - INFO - Extracted 0 characters of content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1461-scaled.webp
+2024-12-14 14:57:47,262 - INFO - Following link: https://apply.ucu.ac.ug
+2024-12-14 14:57:47,265 - INFO - Skipping https://apply.ucu.ac.ug - Different domain
+2024-12-14 14:57:47,269 - INFO - Following link: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1497-scaled.webp
+2024-12-14 14:57:47,272 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1497-scaled.webp at depth 1
+2024-12-14 14:57:47,275 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1497-scaled.webp
+2024-12-14 14:57:48,110 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1497-scaled.webp
+2024-12-14 14:57:48,117 - INFO - Processed 0 valid URLs
+2024-12-14 14:57:48,121 - INFO - Removed 0 unwanted elements
+2024-12-14 14:57:48,125 - INFO - No specific content area found, using full page content
+2024-12-14 14:57:48,128 - INFO - Extracted 0 characters of content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1497-scaled.webp
+2024-12-14 14:57:48,130 - INFO - Following link: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/NCHE-Logo.png
+2024-12-14 14:57:48,133 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/NCHE-Logo.png at depth 1
+2024-12-14 14:57:48,140 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/NCHE-Logo.png
+2024-12-14 14:57:48,564 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/NCHE-Logo.png
+2024-12-14 14:57:48,577 - INFO - Processed 0 valid URLs
+2024-12-14 14:57:48,582 - INFO - Removed 0 unwanted elements
+2024-12-14 14:57:48,590 - INFO - No specific content area found, using full page content
+2024-12-14 14:57:48,684 - INFO - Extracted 0 characters of content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/NCHE-Logo.png
+2024-12-14 14:57:49,054 - INFO - Following link: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1489-scaled.webp
+2024-12-14 14:57:49,062 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1489-scaled.webp at depth 1
+2024-12-14 14:57:49,074 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1489-scaled.webp
+2024-12-14 14:57:49,824 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1489-scaled.webp
+2024-12-14 14:57:49,827 - INFO - Processed 0 valid URLs
+2024-12-14 14:57:49,831 - INFO - Removed 0 unwanted elements
+2024-12-14 14:57:49,836 - INFO - No specific content area found, using full page content
+2024-12-14 14:57:49,840 - INFO - Extracted 0 characters of content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1489-scaled.webp
+2024-12-14 14:57:49,844 - INFO - Following link: https://medicine.ucu.ac.ug/2023/06/06/
+2024-12-14 14:57:49,849 - INFO - Scraping URL: https://medicine.ucu.ac.ug/2023/06/06/ at depth 1
+2024-12-14 14:57:49,856 - INFO - Loading content from https://medicine.ucu.ac.ug/2023/06/06/
+2024-12-14 14:57:54,996 - INFO - Found 40 raw links on https://medicine.ucu.ac.ug/2023/06/06/
+2024-12-14 14:57:55,059 - INFO - Processed 36 valid URLs
+2024-12-14 14:57:55,624 - INFO - Removed 32 unwanted elements
+2024-12-14 14:57:55,805 - INFO - Found content in body tag
+2024-12-14 14:57:56,070 - INFO - Extracted 1596 characters of content from https://medicine.ucu.ac.ug/2023/06/06/
+2024-12-14 14:57:56,354 - INFO - Following link: https://medicine.ucu.ac.ug/category/uncategorized/
+2024-12-14 14:57:56,370 - INFO - Scraping URL: https://medicine.ucu.ac.ug/category/uncategorized/ at depth 2
+2024-12-14 14:57:56,375 - INFO - Loading content from https://medicine.ucu.ac.ug/category/uncategorized/
+2024-12-14 14:57:59,588 - INFO - Found 39 raw links on https://medicine.ucu.ac.ug/category/uncategorized/
+2024-12-14 14:57:59,622 - INFO - Processed 35 valid URLs
+2024-12-14 14:58:00,196 - INFO - Removed 32 unwanted elements
+2024-12-14 14:58:00,378 - INFO - Found content in body tag
+2024-12-14 14:58:00,605 - INFO - Extracted 919 characters of content from https://medicine.ucu.ac.ug/category/uncategorized/
+2024-12-14 14:58:00,942 - INFO - Following link: https://medicine.ucu.ac.ug/2016/06/
+2024-12-14 14:58:01,045 - INFO - Scraping URL: https://medicine.ucu.ac.ug/2016/06/ at depth 2
+2024-12-14 14:58:01,049 - INFO - Loading content from https://medicine.ucu.ac.ug/2016/06/
+2024-12-14 14:58:02,944 - INFO - Found 39 raw links on https://medicine.ucu.ac.ug/2016/06/
+2024-12-14 14:58:02,953 - INFO - Processed 35 valid URLs
+2024-12-14 14:58:03,184 - INFO - Removed 32 unwanted elements
+2024-12-14 14:58:03,244 - INFO - Found content in body tag
+2024-12-14 14:58:03,251 - INFO - Extracted 1040 characters of content from https://medicine.ucu.ac.ug/2016/06/
+2024-12-14 14:58:03,257 - INFO - Following link: https://instagram.com/ucuniversity_official/?hl=en
+2024-12-14 14:58:03,303 - INFO - Skipping https://instagram.com/ucuniversity_official/?hl=en - Different domain
+2024-12-14 14:58:03,474 - INFO - Following link: https://library.ucu.ac.ug
+2024-12-14 14:58:03,482 - INFO - Skipping https://library.ucu.ac.ug - Different domain
+2024-12-14 14:58:03,547 - INFO - Following link: https://www.youtube.com/@ugandachristianuniversity3612
+2024-12-14 14:58:03,673 - INFO - Skipping https://www.youtube.com/@ugandachristianuniversity3612 - Different domain
+2024-12-14 14:58:03,681 - INFO - Following link: https://ug.linkedin.com/company/uganda-christian-university-mukono
+2024-12-14 14:58:03,689 - INFO - Skipping https://ug.linkedin.com/company/uganda-christian-university-mukono - Different domain
+2024-12-14 14:58:03,700 - INFO - Following link: https://ucu.ac.ug
+2024-12-14 14:58:03,737 - INFO - Skipping https://ucu.ac.ug - Different domain
+2024-12-14 14:58:03,890 - INFO - Following link: https://medicine.ucu.ac.ug/wp-login.php?action=register
+2024-12-14 14:58:04,040 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-login.php?action=register at depth 2
+2024-12-14 14:58:04,044 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-login.php?action=register
+2024-12-14 14:58:06,052 - INFO - Found 4 raw links on https://medicine.ucu.ac.ug/wp-login.php?action=register
+2024-12-14 14:58:06,055 - INFO - Processed 4 valid URLs
+2024-12-14 14:58:06,060 - INFO - Removed 2 unwanted elements
+2024-12-14 14:58:06,064 - INFO - Found content in body tag
+2024-12-14 14:58:06,066 - INFO - Extracted 182 characters of content from https://medicine.ucu.ac.ug/wp-login.php?action=register
+2024-12-14 14:58:06,068 - INFO - Following link: https://medicine.ucu.ac.ug/2023/06/
+2024-12-14 14:58:06,069 - INFO - Scraping URL: https://medicine.ucu.ac.ug/2023/06/ at depth 2
+2024-12-14 14:58:06,072 - INFO - Loading content from https://medicine.ucu.ac.ug/2023/06/
+2024-12-14 14:58:06,963 - INFO - Found 40 raw links on https://medicine.ucu.ac.ug/2023/06/
+2024-12-14 14:58:06,972 - INFO - Processed 36 valid URLs
+2024-12-14 14:58:07,011 - INFO - Removed 32 unwanted elements
+2024-12-14 14:58:07,029 - INFO - Found content in body tag
+2024-12-14 14:58:07,033 - INFO - Extracted 1595 characters of content from https://medicine.ucu.ac.ug/2023/06/
+2024-12-14 14:58:07,035 - INFO - Following link: https://medicine.ucu.ac.ug/author/fmkato/
+2024-12-14 14:58:07,040 - INFO - Scraping URL: https://medicine.ucu.ac.ug/author/fmkato/ at depth 2
+2024-12-14 14:58:07,043 - INFO - Loading content from https://medicine.ucu.ac.ug/author/fmkato/
+2024-12-14 14:58:07,888 - INFO - Found 41 raw links on https://medicine.ucu.ac.ug/author/fmkato/
+2024-12-14 14:58:07,892 - INFO - Processed 37 valid URLs
+2024-12-14 14:58:07,922 - INFO - Removed 32 unwanted elements
+2024-12-14 14:58:07,934 - INFO - Found content in body tag
+2024-12-14 14:58:07,938 - INFO - Extracted 1378 characters of content from https://medicine.ucu.ac.ug/author/fmkato/
+2024-12-14 14:58:07,943 - INFO - Following link: https://wordpress.org/
+2024-12-14 14:58:07,952 - INFO - Skipping https://wordpress.org/ - Different domain
+2024-12-14 14:58:07,954 - INFO - Following link: https://apply.ucu.ac.ug
+2024-12-14 14:58:07,961 - INFO - Skipping https://apply.ucu.ac.ug - Different domain
+2024-12-14 14:58:07,964 - INFO - Following link: https://moodle.ucu.ac.ug
+2024-12-14 14:58:07,968 - INFO - Skipping https://moodle.ucu.ac.ug - Different domain
+2024-12-14 14:58:07,971 - INFO - Following link: https://alpha.ucu.ac.ug
+2024-12-14 14:58:07,976 - INFO - Skipping https://alpha.ucu.ac.ug - Different domain
+2024-12-14 14:58:07,984 - INFO - Following link: https://medicine.ucu.ac.ug/comments/feed/
+2024-12-14 14:58:07,989 - INFO - Scraping URL: https://medicine.ucu.ac.ug/comments/feed/ at depth 2
+2024-12-14 14:58:07,997 - INFO - Loading content from https://medicine.ucu.ac.ug/comments/feed/
+2024-12-14 14:58:08,621 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/comments/feed/
+2024-12-14 14:58:08,622 - INFO - Processed 0 valid URLs
+2024-12-14 14:58:08,625 - INFO - Removed 0 unwanted elements
+2024-12-14 14:58:08,627 - INFO - No specific content area found, using full page content
+2024-12-14 14:58:08,630 - INFO - Extracted 130 characters of content from https://medicine.ucu.ac.ug/comments/feed/
+2024-12-14 14:58:08,632 - INFO - Following link: https://twitter.com/ucuniversity
+2024-12-14 14:58:08,633 - INFO - Skipping https://twitter.com/ucuniversity - Different domain
+2024-12-14 14:58:08,635 - INFO - Following link: https://medicine.ucu.ac.ug/wp-login.php
+2024-12-14 14:58:08,638 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-login.php at depth 2
+2024-12-14 14:58:08,642 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-login.php
+2024-12-14 14:58:09,253 - INFO - Found 4 raw links on https://medicine.ucu.ac.ug/wp-login.php
+2024-12-14 14:58:09,273 - INFO - Processed 4 valid URLs
+2024-12-14 14:58:09,282 - INFO - Removed 21 unwanted elements
+2024-12-14 14:58:09,298 - INFO - Found content in body tag
+2024-12-14 14:58:09,302 - INFO - Extracted 132 characters of content from https://medicine.ucu.ac.ug/wp-login.php
+2024-12-14 14:58:09,304 - INFO - Following link: https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf
+2024-12-14 14:58:09,321 - INFO - Skipping https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf - Different domain
+2024-12-14 14:58:09,324 - INFO - Following link: https://medicine.ucu.ac.ug/ddungu-narrates-journey-to-school-of-medicine/
+2024-12-14 14:58:09,333 - INFO - Scraping URL: https://medicine.ucu.ac.ug/ddungu-narrates-journey-to-school-of-medicine/ at depth 2
+2024-12-14 14:58:09,339 - INFO - Loading content from https://medicine.ucu.ac.ug/ddungu-narrates-journey-to-school-of-medicine/
+2024-12-14 14:58:10,323 - INFO - Found 33 raw links on https://medicine.ucu.ac.ug/ddungu-narrates-journey-to-school-of-medicine/
+2024-12-14 14:58:10,353 - INFO - Processed 29 valid URLs
+2024-12-14 14:58:10,383 - INFO - Removed 36 unwanted elements
+2024-12-14 14:58:10,393 - INFO - Found content in article tag
+2024-12-14 14:58:10,396 - INFO - Extracted 3250 characters of content from https://medicine.ucu.ac.ug/ddungu-narrates-journey-to-school-of-medicine/
+2024-12-14 14:58:10,399 - INFO - Following link: https://facebook.com/UgandaChristianUinversity
+2024-12-14 14:58:10,401 - INFO - Skipping https://facebook.com/UgandaChristianUinversity - Different domain
+2024-12-14 14:58:10,405 - INFO - Following link: https://medicine.ucu.ac.ug/feed/
+2024-12-14 14:58:10,422 - INFO - Scraping URL: https://medicine.ucu.ac.ug/feed/ at depth 2
+2024-12-14 14:58:10,425 - INFO - Loading content from https://medicine.ucu.ac.ug/feed/
+2024-12-14 14:58:11,113 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/feed/
+2024-12-14 14:58:11,121 - INFO - Processed 0 valid URLs
+2024-12-14 14:58:11,136 - INFO - Removed 0 unwanted elements
+2024-12-14 14:58:11,141 - INFO - No specific content area found, using full page content
+2024-12-14 14:58:11,144 - INFO - Extracted 3842 characters of content from https://medicine.ucu.ac.ug/feed/
+2024-12-14 14:58:11,162 - INFO - Following link: https://medicine.ucu.ac.ug/2023/06/06/?lang=esp
+2024-12-14 14:58:11,174 - INFO - Scraping URL: https://medicine.ucu.ac.ug/2023/06/06/?lang=esp at depth 2
+2024-12-14 14:58:11,182 - INFO - Loading content from https://medicine.ucu.ac.ug/2023/06/06/?lang=esp
+2024-12-14 14:58:12,128 - INFO - Found 40 raw links on https://medicine.ucu.ac.ug/2023/06/06/?lang=esp
+2024-12-14 14:58:12,136 - INFO - Processed 36 valid URLs
+2024-12-14 14:58:12,162 - INFO - Removed 32 unwanted elements
+2024-12-14 14:58:12,202 - INFO - Found content in body tag
+2024-12-14 14:58:12,206 - INFO - Extracted 1596 characters of content from https://medicine.ucu.ac.ug/2023/06/06/?lang=esp
+2024-12-14 14:58:12,220 - INFO - Following link: https://moodle.ucu.ac.ug
+2024-12-14 14:58:12,223 - INFO - Skipping https://moodle.ucu.ac.ug - Different domain
+2024-12-14 14:58:12,225 - INFO - Following link: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1548-scaled.webp
+2024-12-14 14:58:12,227 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1548-scaled.webp at depth 1
+2024-12-14 14:58:12,235 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1548-scaled.webp
+2024-12-14 14:58:14,282 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1548-scaled.webp
+2024-12-14 14:58:14,284 - INFO - Processed 0 valid URLs
+2024-12-14 14:58:14,285 - INFO - Removed 0 unwanted elements
+2024-12-14 14:58:14,286 - INFO - No specific content area found, using full page content
+2024-12-14 14:58:14,288 - INFO - Extracted 0 characters of content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1548-scaled.webp
+2024-12-14 14:58:14,290 - INFO - Following link: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1547-scaled.webp
+2024-12-14 14:58:14,296 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1547-scaled.webp at depth 1
+2024-12-14 14:58:14,298 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1547-scaled.webp
+2024-12-14 14:58:15,419 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1547-scaled.webp
+2024-12-14 14:58:15,422 - INFO - Processed 0 valid URLs
+2024-12-14 14:58:15,425 - INFO - Removed 0 unwanted elements
+2024-12-14 14:58:15,428 - INFO - No specific content area found, using full page content
+2024-12-14 14:58:15,429 - INFO - Extracted 0 characters of content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1547-scaled.webp
+2024-12-14 14:58:15,431 - INFO - Following link: https://alpha.ucu.ac.ug
+2024-12-14 14:58:15,432 - INFO - Skipping https://alpha.ucu.ac.ug - Different domain
+2024-12-14 14:58:15,433 - INFO - Following link: https://standard.ucu.ac.ug
+2024-12-14 14:58:15,435 - INFO - Skipping https://standard.ucu.ac.ug - Different domain
+2024-12-14 14:58:15,436 - INFO - Following link: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Uganda-Partners.png
+2024-12-14 14:58:15,438 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Uganda-Partners.png at depth 1
+2024-12-14 14:58:15,443 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Uganda-Partners.png
+2024-12-14 14:58:15,932 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Uganda-Partners.png
+2024-12-14 14:58:15,933 - INFO - Processed 0 valid URLs
+2024-12-14 14:58:15,934 - INFO - Removed 0 unwanted elements
+2024-12-14 14:58:15,936 - INFO - No specific content area found, using full page content
+2024-12-14 14:58:15,937 - INFO - Extracted 0 characters of content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/Uganda-Partners.png
+2024-12-14 14:58:15,938 - INFO - Following link: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1473-scaled.webp
+2024-12-14 14:58:15,940 - INFO - Scraping URL: https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1473-scaled.webp at depth 1
+2024-12-14 14:58:15,945 - INFO - Loading content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1473-scaled.webp
+2024-12-14 14:58:16,743 - INFO - Found 0 raw links on https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1473-scaled.webp
+2024-12-14 14:58:16,745 - INFO - Processed 0 valid URLs
+2024-12-14 14:58:16,746 - INFO - Removed 0 unwanted elements
+2024-12-14 14:58:16,748 - INFO - No specific content area found, using full page content
+2024-12-14 14:58:16,749 - INFO - Extracted 0 characters of content from https://medicine.ucu.ac.ug/wp-content/uploads/2023/06/DSC_1473-scaled.webp
+2024-12-14 14:58:16,750 - INFO - Following link: https://twitter.com/ucuniversity
+2024-12-14 14:58:16,751 - INFO - Skipping https://twitter.com/ucuniversity - Different domain
+2024-12-14 14:58:16,752 - INFO - Following link: https://medicine.ucu.ac.ug/?lang=esp
+2024-12-14 14:58:16,754 - INFO - Scraping URL: https://medicine.ucu.ac.ug/?lang=esp at depth 1
+2024-12-14 14:58:16,755 - INFO - Loading content from https://medicine.ucu.ac.ug/?lang=esp
+2024-12-14 14:58:17,931 - INFO - Found 45 raw links on https://medicine.ucu.ac.ug/?lang=esp
+2024-12-14 14:58:17,935 - INFO - Processed 41 valid URLs
+2024-12-14 14:58:18,020 - INFO - Removed 37 unwanted elements
+2024-12-14 14:58:18,108 - INFO - Found content in body tag
+2024-12-14 14:58:18,121 - INFO - Extracted 4361 characters of content from https://medicine.ucu.ac.ug/?lang=esp
+2024-12-14 14:58:18,139 - INFO - Following link: https://instagram.com/ucuniversity_official/?hl=en
+2024-12-14 14:58:18,140 - INFO - Skipping https://instagram.com/ucuniversity_official/?hl=en - Different domain
+2024-12-14 14:58:18,154 - INFO - Following link: https://library.ucu.ac.ug
+2024-12-14 14:58:18,156 - INFO - Skipping https://library.ucu.ac.ug - Different domain
+2024-12-14 14:58:18,163 - INFO - Following link: https://www.youtube.com/@ugandachristianuniversity3612
+2024-12-14 14:58:18,213 - INFO - Skipping https://www.youtube.com/@ugandachristianuniversity3612 - Different domain
+2024-12-14 14:58:18,259 - INFO - Following link: https://ug.linkedin.com/company/uganda-christian-university-mukono
+2024-12-14 14:58:18,282 - INFO - Skipping https://ug.linkedin.com/company/uganda-christian-university-mukono - Different domain
+2024-12-14 14:58:18,285 - INFO - Following link: https://ucu.ac.ug
+2024-12-14 14:58:18,288 - INFO - Skipping https://ucu.ac.ug - Different domain
+2024-12-14 14:58:18,311 - INFO - Following link: https://apply.ucu.ac.ug
+2024-12-14 14:58:18,313 - INFO - Skipping https://apply.ucu.ac.ug - Different domain
+2024-12-14 14:58:18,322 - INFO - Following link: https://moodle.ucu.ac.ug
+2024-12-14 14:58:18,324 - INFO - Skipping https://moodle.ucu.ac.ug - Different domain
+2024-12-14 14:58:18,325 - INFO - Following link: https://alpha.ucu.ac.ug
+2024-12-14 14:58:18,331 - INFO - Skipping https://alpha.ucu.ac.ug - Different domain
+2024-12-14 14:58:18,333 - INFO - Following link: https://standard.ucu.ac.ug
+2024-12-14 14:58:18,335 - INFO - Skipping https://standard.ucu.ac.ug - Different domain
+2024-12-14 14:58:18,339 - INFO - Following link: https://twitter.com/ucuniversity
+2024-12-14 14:58:18,341 - INFO - Skipping https://twitter.com/ucuniversity - Different domain
+2024-12-14 14:58:18,371 - INFO - Following link: https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf
+2024-12-14 14:58:18,403 - INFO - Skipping https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf - Different domain
+2024-12-14 14:58:18,406 - INFO - Following link: https://facebook.com/UgandaChristianUinversity
+2024-12-14 14:58:18,435 - INFO - Skipping https://facebook.com/UgandaChristianUinversity - Different domain
+2024-12-14 14:58:18,445 - INFO - Following link: https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf
+2024-12-14 14:58:18,450 - INFO - Skipping https://ucu.ac.ug/wp-content/uploads/2023/03/UCU-FEES.pdf - Different domain
+2024-12-14 14:58:18,452 - INFO - Following link: https://facebook.com/UgandaChristianUinversity
+2024-12-14 14:58:18,472 - INFO - Skipping https://facebook.com/UgandaChristianUinversity - Different domain

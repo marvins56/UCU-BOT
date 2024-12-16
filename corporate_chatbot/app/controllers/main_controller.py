@@ -60,10 +60,21 @@ class ChatbotController:
     
     def get_chat_response(self, query):
         logger.info(f"Generating chat response for query: {query}")
-        # Search vector database for relevant content
-        context = self.data_manager.search(query)
-        logger.info("Relevant context retrieved from the vector database")
-        # Generate response using context
-        response = self.generate_response(query, context)
+        # Use hybrid search for better results
+        context = self.data_manager.hybrid_search(query, collection_name="uploaded_documents")
+        
+        # Get context window for better understanding
+        enhanced_context = []
+        for result in context:
+            context_window = self.data_manager.get_context_window(result)
+            enhanced_context.append({
+                'text': context_window,
+                'metadata': result['metadata'],
+                'score': result.get('score', 0)
+            })
+        
+        logger.info("Enhanced context retrieved from the vector database")
+        # Generate response using enhanced context
+        response = self.generate_response(query, enhanced_context)
         logger.info("Chat response generated successfully")
         return response
