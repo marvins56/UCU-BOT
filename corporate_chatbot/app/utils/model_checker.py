@@ -44,19 +44,19 @@ def download_model(url: str, filename: str, models_dir: str):
 def check_and_download_models():
     # Get the absolute path to the models directory in the project root
     models_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'models')
-    
+
     # Check if models exist
     missing_models = []
     for model_name, model_info in MODELS.items():
         filepath = os.path.join(models_dir, model_info['filename'])
         if not os.path.exists(filepath):
             missing_models.append((model_name, model_info))
-    
+
     # If no models are missing, return True immediately
     if not missing_models:
         print("All required models are already present.")
         return True
-    
+
     # Only download missing models if any
     if missing_models:
         print("\nMissing models detected. Starting download...")
@@ -66,5 +66,5 @@ def check_and_download_models():
             if not success:
                 logger.error(f"Failed to download {model_name}")
                 return False
-    
+
     return True
