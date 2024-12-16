@@ -37,7 +37,7 @@ if __name__ == '__main__':
         try:
             PORT = 5501
             print(f"Starting application on port {PORT}...")
-            serve(app, host='127.0.0.1', port=PORT)
+            serve(app, host='0.0.0.0', port=PORT)  # Changed from 127.0.0.1 to 0.0.0.0
         except Exception as e:
             print(f"Failed to start application: {str(e)}")
         finally:
