@@ -1,3 +1,4 @@
 
 corporate_chatbot/models/mistral-7b-instruct-v0.1.Q4_K_M.gguf
 /corporate_chatbot/models
+*.pyc
