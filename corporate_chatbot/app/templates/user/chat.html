@@ -225,7 +225,49 @@ document.getElementById('chat-form').addEventListener('submit', async function(e
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 });
+function formatSources(sources) {
+    if (!sources || sources.length === 0) {
+        return '';
+    }
 
+    return sources.map(source => {
+        switch(source.type) {
+            case 'url':
+                return `
+                    <div class="source-item">
+                        <a href="${source.url}" target="_blank" class="text-blue-500 hover:text-blue-600 underline flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                            ${source.title || 'Visit Source'}
+                        </a>
+                        ${source.timestamp ? `<span class="text-xs text-gray-500">(${new Date(source.timestamp).toLocaleDateString()})</span>` : ''}
+                    </div>
+                `;
+            case 'document':
+                return `
+                    <div class="source-item">
+                        <span class="text-gray-700 dark:text-gray-300">
+                            📄 ${source.file_name}
+                            ${source.page ? `(Page ${source.page})` : ''}
+                        </span>
+                    </div>
+                `;
+            case 'reference':
+                return `
+                    <div class="source-item">
+                        <span class="text-gray-700 dark:text-gray-300">
+                            ${source.text}
+                            ${source.details ? `<br><span class="text-xs">${source.details}</span>` : ''}
+                        </span>
+                    </div>
+                `;
+            default:
+                return '';
+        }
+    }).join('<br>');
+}
 // Add this section for handling sources display
 function formatSources(sources) {
     if (!sources || sources.length === 0) {
@@ -294,10 +336,13 @@ function addMessage(message, sender, sources = null, model = null) {
                             </div>
                         ` : ''}
                         ${sources && sources.length > 0 ? `
-                            <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">
-                                Sources: ${formatSources(sources)}
-                            </div>
-                        ` : ''}
+        <div class="mt-2 text-xs border-t border-gray-200 dark:border-gray-700 pt-2">
+            <div class="font-medium text-gray-600 dark:text-gray-400 mb-1">Sources:</div>
+            <div class="space-y-1">
+                ${formatSources(sources)}
+            </div>
+        </div>
+    ` : ''}
                     </div>
                     <span class="text-xs text-gray-500 dark:text-gray-400 ml-2">${timestamp}</span>
                 </div>
@@ -343,7 +388,30 @@ function addMessage(message, sender, sources = null, model = null) {
       opacity: 0.4;
       animation: typing-dot 1s infinite ease-in-out;
   }
-  
+  .source-item {
+        padding: 4px 8px;
+        border-radius: 4px;
+        background-color: rgba(0,0,0,0.05);
+        margin-bottom: 4px;
+    }
+
+    .dark .source-item {
+        background-color: rgba(255,255,255,0.05);
+    }
+
+    .source-item a {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .source-item:hover {
+        background-color: rgba(0,0,0,0.1);
+    }
+
+    .dark .source-item:hover {
+        background-color: rgba(255,255,255,0.1);
+    }
   .typing-dot:nth-child(1) { animation-delay: 0s; }
   .typing-dot:nth-child(2) { animation-delay: 0.2s; }
   .typing-dot:nth-child(3) { animation-delay: 0.4s; }

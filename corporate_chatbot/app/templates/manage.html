@@ -1,5 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
+<style>
+    /* Search Input and Button Styles */
+    .search-container {
+        position: relative;
+    }
+
+    .search-input:focus {
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+    }
+
+    /* Results Animation */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .result-item {
+        animation: fadeIn 0.3s ease-out forwards;
+    }
+
+    /* Loading Spinner Animation */
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .loading-spinner {
+        animation: spin 1s linear infinite;
+    }
+</style>
 <div class="min-h-screen bg-gray-50">
     <!-- Dashboard Header -->
     <header class="bg-white shadow">
@@ -67,25 +97,56 @@
         </div>
 
         <!-- Search Interface -->
-        <div class="mt-8 bg-white shadow rounded-lg">
-            <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
-                <h2 class="text-lg font-medium text-gray-900">Search Knowledge Base</h2>
-            </div>
-            <div class="px-4 py-5 sm:p-6">
-                <div class="max-w-xl">
+        <!-- Search Interface -->
+<div class="mt-8 bg-white shadow rounded-lg">
+    <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+        <h2 class="text-lg font-medium text-gray-900">Search Knowledge Base</h2>
+    </div>
+    <div class="px-4 py-5 sm:p-6">
+        <div class="max-w-xl">
+            <form id="search-form" class="space-y-4">
+                <!-- Collection Selector -->
+                <div>
+                    <label for="collection-select" class="block text-sm font-medium text-gray-700">Select Collection</label>
+                    <select id="collection-select" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 rounded-md shadow-sm">
+                        <option value="">All Collections</option>
+                    </select>
+                </div>
+                
+                <!-- Search Input -->
+                <div class="relative">
+                    <label for="search-input" class="block text-sm font-medium text-gray-700">Search Query</label>
                     <div class="mt-1 flex rounded-md shadow-sm">
-                        <input type="text" id="search-input" class="focus:ring-blue-500 focus:border-blue-500 flex-1 block w-full rounded-md sm:text-sm border-gray-300" placeholder="Search...">
-                        <button type="button" class="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                        <input type="text" 
+                               id="search-input" 
+                               class="focus:ring-blue-500 focus:border-blue-500 flex-1 block w-full rounded-l-md sm:text-sm border-gray-300" 
+                               placeholder="Enter your search query...">
+                        <button type="submit" 
+                                class="inline-flex items-center px-4 py-2 border border-l-0 border-transparent text-sm font-medium rounded-r-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
                             Search
                         </button>
                     </div>
                 </div>
-                
-                <div class="mt-6" id="search-results">
-                    <!-- Search results will appear here -->
-                </div>
-            </div>
+            </form>
         </div>
+        
+        <!-- Loading Spinner -->
+        <div id="search-loader" class="hidden mt-8">
+            <div class="flex justify-center">
+                <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-500"></div>
+            </div>
+            <p class="text-center mt-2 text-sm text-gray-500">Searching...</p>
+        </div>
+        
+        <!-- Results Section -->
+        <div class="mt-6" id="search-results">
+            <!-- Search results will appear here -->
+        </div>
+    </div>
+</div>
     </main>
 </div>
 

@@ -1,5 +1,7 @@
 from flask import render_template, Blueprint, jsonify, request
 from datetime import datetime
+
+from ..utils.custom_retriever import HybridRetriever
 from ..utils.model_manager import ModelManager
 from ..controllers.main_controller import ChatbotController
 import logging
@@ -45,14 +47,11 @@ def init_model():
         if model_manager.current_model != selected_model:
             logger.info(f"Initializing model: {selected_model}")
             
-            # Configure MMR retriever
-            retriever = controller.data_manager.vectorstore.as_retriever(
-                search_type="mmr",
-                search_kwargs={
-                    "k": 4,  # Number of documents to retrieve
-                    "fetch_k": 20,  # Number of documents to fetch before filtering
-                    "lambda_mult": 0.7,  # Balance between relevance and diversity
-                }
+            # Create hybrid retriever instance
+            retriever = HybridRetriever(
+                data_manager=controller.data_manager,
+                collection_name="uploaded_documents",
+                k=4
             )
             
             success = model_manager.initialize_chain(
@@ -78,7 +77,6 @@ def init_model():
             'error': str(e),
             'success': False
         }), 500
-
 @user.route('/chat', methods=['POST'])
 def chat():
     try:

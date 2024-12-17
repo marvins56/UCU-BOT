@@ -119,7 +119,7 @@ class ChatbotController:
                     search_type="mmr",
                     search_kwargs={
                         "k": 4,
-                        "fetch_k": 20,
+                        "fetch_k": 15,
                         "lambda_mult": 0.7
                     }
                 )
