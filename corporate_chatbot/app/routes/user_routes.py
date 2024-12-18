@@ -49,7 +49,7 @@ def init_model():
             
             # Create hybrid retriever instance
             retriever = HybridRetriever(
-                data_manager=controller.data_manager,
+                data_manager=controller.data_manager.vectorstore,
                 collection_name="uploaded_documents",
                 k=4
             )
